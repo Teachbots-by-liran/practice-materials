@@ -1,0 +1,317 @@
+{
+  "id": "band3-starter",
+  "title": "Band III · Starter set",
+  "words": [
+    {
+      "word": "achieve",
+      "pos": "verb",
+      "he": "להשיג, להגיע ל־",
+      "definition": "to succeed in reaching a goal, usually through hard work",
+      "family": [
+        { "form": "achievement", "pos": "noun" },
+        { "form": "achievable", "pos": "adjective" }
+      ],
+      "meet": {
+        "sentence": "After two years of training, Noa finally {achieved} her goal of running a marathon.",
+        "options": ["reached something she worked for", "gave up on a plan", "forgot something important"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "achieve-1", "type": "meaning", "prompt": "to succeed in reaching a goal, usually through hard work", "options": ["achieve", "reject", "reveal", "maintain"], "answer": 0 },
+        { "id": "achieve-2", "type": "cloze", "sentence": "With better planning, the team could {_} much better results next year.", "options": ["achieve", "reject", "reveal", "contribute"], "answer": 0 },
+        { "id": "achieve-3", "type": "swipe", "sentence": "Our team worked hard and {achieved} first place in the competition.", "correct": true, "explain": "Correct. You achieve a goal, a result or a place in a competition." },
+        { "id": "achieve-4", "type": "swipe", "sentence": "He {achieved} the bus by running all the way to the station.", "correct": false, "explain": "You catch a bus. Achieve is for goals and results you work for." },
+        { "id": "achieve-5", "type": "chat", "who": "Maya", "them": "You got 100 in the math Bagrut?! How?? 😱", "me": "Lots of practice! If you work hard, you can {_} anything.", "answer": "achieve", "alsoFits": ["do"] },
+        { "id": "achieve-6", "type": "chat", "who": "Omer", "them": "Did the class reach its goal for the charity run?", "me": "Yes! We raised 5,000 shekels. We {_} our goal two weeks early.", "answer": "achieved", "alsoFits": ["reached", "met", "hit"] },
+        { "id": "achieve-7", "type": "family", "sentence": "Getting into the national team was a huge {_} for the whole school.", "answer": "achievement", "hint": "You need a noun here. Many nouns made from verbs end in -ment." },
+        { "id": "achieve-8", "type": "pick", "options": [
+          { "text": "She {achieved} her dream of becoming a doctor.", "correct": true },
+          { "text": "The company {achieved} record sales this year.", "correct": true },
+          { "text": "I {achieved} my keys under the sofa.", "correct": false },
+          { "text": "They {achieved} a cold after the trip.", "correct": false }
+        ], "explain": "You achieve goals, dreams and results. You find keys and catch a cold." },
+        { "id": "achieve-9", "type": "cloze", "level": "advanced", "sentence": "Setting small, {_} goals helps students stay motivated.", "options": ["achievable", "achievement", "achieving", "achieved"], "answer": 0, "explain": "Before 'goals' you need an adjective: achievable = possible to reach." }
+      ]
+    },
+    {
+      "word": "sustain",
+      "pos": "verb",
+      "he": "לקיים, לשמר לאורך זמן",
+      "definition": "to keep something going over a long period of time",
+      "family": [
+        { "form": "sustainable", "pos": "adjective" },
+        { "form": "sustainability", "pos": "noun" }
+      ],
+      "meet": {
+        "sentence": "Our town cannot {sustain} its water supply if people keep wasting so much.",
+        "options": ["sell quickly", "keep going over time", "clean completely"],
+        "answer": 1
+      },
+      "questions": [
+        { "id": "sustain-1", "type": "meaning", "prompt": "to keep something going over a long period of time", "options": ["sustain", "reveal", "reject", "adapt"], "answer": 0 },
+        { "id": "sustain-2", "type": "cloze", "sentence": "Without enough food and water, the island could not {_} life for long.", "options": ["sustain", "reveal", "reject", "address"], "answer": 0 },
+        { "id": "sustain-3", "type": "swipe", "sentence": "She {sustained} the door quickly so the cat couldn't get out.", "correct": false, "explain": "Sustain means to keep something going over time. For a door, you would shut or close it." },
+        { "id": "sustain-4", "type": "chat", "who": "Daniel", "them": "Our school started a recycling program, but I bet it stops in a month 🙄", "me": "Not if we all help. We can {_} it for years!", "answer": "sustain", "alsoFits": ["keep", "continue", "maintain"] },
+        { "id": "sustain-5", "type": "chat", "who": "Noa", "them": "You've been running every morning for a year?! How do you keep it up?", "me": "Small steps. That's the only way to {_} a habit for so long.", "answer": "sustain", "alsoFits": ["keep", "maintain"] },
+        { "id": "sustain-6", "type": "family", "sentence": "We need more {_} ways to produce energy, like solar and wind power.", "answer": "sustainable", "hint": "You need an adjective before 'ways'. Many adjectives end in -able." },
+        { "id": "sustain-7", "type": "swipe", "sentence": "The economy grew quickly, but the growth was not {sustained} for long.", "correct": true, "explain": "Correct. Sustained growth is growth that continues over time." },
+        { "id": "sustain-8", "type": "cloze", "level": "advanced", "sentence": "The city is famous for its focus on {_}, with bike lanes and green roofs everywhere.", "options": ["sustainability", "sustainable", "sustain", "sustained"], "answer": 0, "explain": "After 'its focus on' you need a noun: sustainability." }
+      ]
+    },
+    {
+      "word": "reveal",
+      "pos": "verb",
+      "he": "לחשוף, לגלות",
+      "definition": "to show or make known something that was hidden or secret",
+      "family": [
+        { "form": "revelation", "pos": "noun" },
+        { "form": "revealing", "pos": "adjective" }
+      ],
+      "meet": {
+        "sentence": "The study {revealed} that most teenagers sleep less than they need.",
+        "options": ["showed something that wasn't known", "hid the results", "changed the rules"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "reveal-1", "type": "meaning", "prompt": "to show or make known something that was hidden or secret", "options": ["reveal", "sustain", "achieve", "conduct"], "answer": 0 },
+        { "id": "reveal-2", "type": "cloze", "sentence": "The police hope the cameras will {_} who broke into the shop.", "options": ["reveal", "sustain", "achieve", "reject"], "answer": 0 },
+        { "id": "reveal-3", "type": "swipe", "sentence": "The new report {revealed} that air pollution in the city had doubled.", "correct": true, "explain": "Correct. A report or study can reveal (show) information that wasn't known." },
+        { "id": "reveal-4", "type": "swipe", "sentence": "Please {reveal} the window, it's really hot in here.", "correct": false, "explain": "Reveal is for secrets and information. For a window, you open it." },
+        { "id": "reveal-5", "type": "chat", "who": "Shira", "them": "Did you see the magic show?? How did he do the coin trick?!", "me": "No idea! He refused to {_} his secret 🤐", "answer": "reveal", "alsoFits": ["share", "tell", "explain"] },
+        { "id": "reveal-6", "type": "chat", "who": "Itay", "them": "So... is the surprise party still a secret? 🎉", "me": "Yes! Don't {_} anything to Yael until Friday!", "answer": "reveal", "alsoFits": ["say", "tell", "mention"] },
+        { "id": "reveal-7", "type": "family", "sentence": "The interview was very {_}: we learned a lot about her private life.", "answer": "revealing", "hint": "You need an adjective that describes the interview. Try the -ing form." },
+        { "id": "reveal-8", "type": "cloze", "level": "advanced", "sentence": "Her sudden {_} that she was leaving the band shocked her fans.", "options": ["revelation", "reveal", "revealing", "revealed"], "answer": 0, "explain": "After 'her sudden' you need a noun: revelation." }
+      ]
+    },
+    {
+      "word": "reject",
+      "pos": "verb",
+      "he": "לדחות, לסרב לקבל",
+      "definition": "to refuse to accept or agree to something",
+      "family": [{ "form": "rejection", "pos": "noun" }],
+      "meet": {
+        "sentence": "The principal {rejected} our idea to start school at ten o'clock.",
+        "options": ["said no to", "said yes to", "forgot about"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "reject-1", "type": "meaning", "prompt": "to refuse to accept or agree to something", "options": ["reject", "achieve", "sustain", "reveal"], "answer": 0 },
+        { "id": "reject-2", "type": "cloze", "sentence": "The committee voted to {_} the plan because it was far too expensive.", "options": ["reject", "contribute", "reveal", "adapt"], "answer": 0 },
+        { "id": "reject-3", "type": "swipe", "sentence": "The university {rejected} his application, so he applied again the next year.", "correct": true, "explain": "Correct. You can reject an application, an offer or an idea." },
+        { "id": "reject-4", "type": "swipe", "sentence": "I {rejected} my homework in my bag so I wouldn't lose it.", "correct": false, "explain": "Reject means to refuse something. You put homework in your bag." },
+        { "id": "reject-5", "type": "chat", "who": "Lior", "them": "Did you ask your parents about the trip to Eilat?", "me": "Yes 😩 They {_} the idea. They said it's too far.", "answer": "rejected", "alsoFits": ["hated", "refused", "vetoed"] },
+        { "id": "reject-6", "type": "chat", "who": "Tamar", "them": "The team offered you the captain role? That's amazing!", "me": "I know, but I'm going to {_} it. I don't have time this year.", "answer": "reject", "alsoFits": ["refuse", "decline"] },
+        { "id": "reject-7", "type": "family", "sentence": "Getting a {_} letter from a college can be very painful.", "answer": "rejection", "hint": "You need a noun before 'letter'. Many nouns end in -ion." },
+        { "id": "reject-8", "type": "pick", "level": "advanced", "options": [
+          { "text": "{Rejected} by three publishers, the book later became a bestseller.", "correct": true },
+          { "text": "She felt {rejected} when nobody invited her to the party.", "correct": true },
+          { "text": "The body can {reject} a new organ after a transplant.", "correct": true },
+          { "text": "He {rejected} the ball straight into the net.", "correct": false }
+        ], "explain": "Reject can also describe feelings (to feel rejected) and the body refusing a transplant. You kick a ball into the net." }
+      ]
+    },
+    {
+      "word": "contribute",
+      "pos": "verb",
+      "he": "לתרום",
+      "definition": "to give money, time or ideas to help something, together with other people",
+      "family": [
+        { "form": "contribution", "pos": "noun" },
+        { "form": "contributor", "pos": "noun" }
+      ],
+      "meet": {
+        "sentence": "Every student {contributed} 20 shekels to buy a present for the teacher.",
+        "options": ["gave as part of a group", "borrowed", "lost"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "contribute-1", "type": "meaning", "prompt": "to give money, time or ideas to help something, together with other people", "options": ["contribute", "reject", "reveal", "sustain"], "answer": 0 },
+        { "id": "contribute-2", "type": "cloze", "sentence": "Everyone in the group should {_} at least one idea to the project.", "options": ["contribute", "reject", "sustain", "achieve"], "answer": 0 },
+        { "id": "contribute-3", "type": "swipe", "sentence": "Lack of sleep can {contribute} to poor grades.", "correct": true, "explain": "Correct. Contribute to can also mean 'be one of the causes of' something." },
+        { "id": "contribute-4", "type": "swipe", "sentence": "I {contributed} a new phone from the store yesterday.", "correct": false, "explain": "Contribute means to give to a shared goal. From a store, you buy something." },
+        { "id": "contribute-5", "type": "chat", "who": "Yoav", "them": "We're collecting money for the animal shelter. Want to help? 🐶", "me": "Of course! I'd love to {_}. How much do you need?", "answer": "contribute", "alsoFits": ["help", "donate", "give"] },
+        { "id": "contribute-6", "type": "chat", "who": "Ella", "them": "Why are you staying late after school every day?", "me": "I volunteer at the library. I want to {_} something to my community.", "answer": "contribute", "alsoFits": ["give"] },
+        { "id": "contribute-7", "type": "family", "sentence": "Thank you for your generous {_} to our school fair.", "answer": "contribution", "hint": "You need a noun after 'your generous'. Many nouns end in -ion." },
+        { "id": "contribute-8", "type": "cloze", "level": "advanced", "sentence": "Doctors say that too much screen time may {_} to anxiety in teenagers.", "options": ["contribute", "achieve", "reveal", "sustain"], "answer": 0, "explain": "Contribute to can mean 'help cause'. Here, screen time is one of the causes of anxiety." }
+      ]
+    },
+    {
+      "word": "benefit",
+      "pos": "noun",
+      "he": "תועלת, יתרון",
+      "definition": "an advantage or good result that you get from something",
+      "family": [{ "form": "beneficial", "pos": "adjective" }],
+      "meet": {
+        "sentence": "One big {benefit} of living near the sea is the fresh air.",
+        "options": ["a good thing you get", "a problem", "a price"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "benefit-1", "type": "meaning", "prompt": "an advantage or good result that you get from something", "options": ["benefit", "barrier", "achievement", "rejection"], "answer": 0 },
+        { "id": "benefit-2", "type": "cloze", "sentence": "Regular exercise has many health {_}, like better sleep and a stronger heart.", "options": ["benefits", "barriers", "rejections", "revelations"], "answer": 0 },
+        { "id": "benefit-3", "type": "swipe", "sentence": "Learning a second language has many {benefits}, like better job opportunities.", "correct": true, "explain": "Correct. A benefit is a good result or advantage." },
+        { "id": "benefit-4", "type": "swipe", "sentence": "I hurt my knee, and the {benefit} lasted for weeks.", "correct": false, "explain": "A benefit is something good. For a knee, you'd talk about the pain or the injury." },
+        { "id": "benefit-5", "type": "chat", "who": "Adi", "them": "Why do you wake up at 6 to study? That's crazy 😴", "me": "The {_} is that my brain is fresh and the house is quiet.", "answer": "benefit", "alsoFits": ["advantage", "plus", "reason"] },
+        { "id": "benefit-6", "type": "chat", "who": "Ron", "them": "Is the new school app actually useful?", "me": "Yes! The main {_} is that you can see all your grades in one place.", "answer": "benefit", "alsoFits": ["advantage", "plus"] },
+        { "id": "benefit-7", "type": "family", "sentence": "Drinking enough water is {_} for your concentration.", "answer": "beneficial", "hint": "You need an adjective after 'is'. This one ends in -ial." },
+        { "id": "benefit-8", "type": "cloze", "level": "advanced", "sentence": "Everyone will {_} from the new library, from small kids to grandparents.", "options": ["benefit", "beneficial", "benefits", "beneficially"], "answer": 0, "explain": "Benefit can also be a verb: to benefit from something = to get something good from it." }
+      ]
+    },
+    {
+      "word": "barrier",
+      "pos": "noun",
+      "he": "מחסום",
+      "definition": "something that stops people or things from moving forward or doing something",
+      "family": [],
+      "meet": {
+        "sentence": "For many new immigrants, language is the biggest {barrier} to finding a job.",
+        "options": ["something that blocks the way", "a kind of language course", "a reward"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "barrier-1", "type": "meaning", "prompt": "something that stops people or things from moving forward or doing something", "options": ["barrier", "benefit", "achievement", "contribution"], "answer": 0 },
+        { "id": "barrier-2", "type": "cloze", "sentence": "The police put up a {_} to stop cars from entering the street during the marathon.", "options": ["barrier", "benefit", "contribution", "revelation"], "answer": 0 },
+        { "id": "barrier-3", "type": "swipe", "sentence": "Not knowing the local language can be a {barrier} when you move abroad.", "correct": true, "explain": "Correct. A barrier can be physical (a fence) or not (a language barrier)." },
+        { "id": "barrier-4", "type": "swipe", "sentence": "Winning the prize was a great {barrier} for the whole team.", "correct": false, "explain": "A barrier blocks you. Winning a prize is an achievement." },
+        { "id": "barrier-5", "type": "chat", "who": "Gal", "them": "How was your trip to Japan? Did you understand anyone? 😅", "me": "Not really. The language {_} was hard, but people were super kind.", "answer": "barrier", "alsoFits": ["gap"] },
+        { "id": "barrier-6", "type": "chat", "who": "Neta", "them": "Why didn't more students sign up for the trip?", "me": "The price was the main {_}. It's way too expensive for most families.", "answer": "barrier", "alsoFits": ["problem", "obstacle", "issue"] },
+        { "id": "barrier-7", "type": "pick", "level": "advanced", "options": [
+          { "text": "Cost is a major {barrier} to higher education.", "correct": true },
+          { "text": "Breaking the sound {barrier} was a historic moment.", "correct": true },
+          { "text": "The wall was built as a {barrier} against floods.", "correct": true },
+          { "text": "She gave me a {barrier} for my birthday.", "correct": false }
+        ], "explain": "A barrier can block movement (a flood barrier), progress (cost) or mark a limit (the sound barrier). It isn't a present." }
+      ]
+    },
+    {
+      "word": "address",
+      "pos": "verb",
+      "he": "לטפל ב־ (בעיה); לפנות אל",
+      "definition": "to deal with a problem; also, to speak to a person or a group",
+      "family": [],
+      "senses": ["deal with", "speak to"],
+      "meet": {
+        "sentence": "The new government promised to {address} the housing crisis quickly.",
+        "options": ["deal with", "ignore", "cause"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "address-1", "type": "meaning", "sense": "deal with", "prompt": "to start dealing with a problem", "options": ["address", "reveal", "reject", "sustain"], "answer": 0 },
+        { "id": "address-2", "type": "meaning", "sense": "speak to", "prompt": "to speak to a group of people formally", "options": ["address", "contribute", "conduct", "achieve"], "answer": 0 },
+        { "id": "address-3", "type": "cloze", "sense": "deal with", "sentence": "The school must {_} the problem of bullying before it gets worse.", "options": ["address", "achieve", "sustain", "contribute"], "answer": 0 },
+        { "id": "address-4", "type": "cloze", "sense": "speak to", "sentence": "The principal will {_} all the students at the end-of-year ceremony.", "options": ["address", "achieve", "reject", "sustain"], "answer": 0 },
+        { "id": "address-5", "type": "swipe", "sense": "deal with", "sentence": "The report {addresses} the main causes of air pollution.", "correct": true, "explain": "Correct. To address an issue is to deal with it or discuss it." },
+        { "id": "address-6", "type": "swipe", "sense": "deal with", "sentence": "I {addressed} a delicious cake for my mom's birthday.", "correct": false, "explain": "Address means to deal with a problem or speak to people. You bake a cake." },
+        { "id": "address-7", "type": "chat", "sense": "deal with", "who": "Yuval", "them": "The Wi-Fi at school is SO slow. Is anyone doing anything about it?", "me": "The principal said they'll {_} the problem next week.", "answer": "address", "alsoFits": ["fix", "solve", "handle"] },
+        { "id": "address-8", "type": "chat", "sense": "speak to", "who": "Mika", "them": "Why are you so nervous today?", "me": "I have to {_} the whole school at the assembly tomorrow 😬", "answer": "address", "alsoFits": ["face"] },
+        { "id": "address-9", "type": "swipe", "sense": "speak to", "sentence": "The president {addressed} the nation on TV last night.", "correct": true, "explain": "Correct. To address a group is to give a formal speech to it." },
+        { "id": "address-10", "type": "cloze", "level": "advanced", "sentence": "Please {_} all questions to the school secretary, not to the teachers.", "options": ["address", "reveal", "contribute", "conduct"], "answer": 0, "explain": "Address can also mean to send or direct questions or a letter to someone." }
+      ]
+    },
+    {
+      "word": "conduct",
+      "pos": "verb",
+      "he": "לערוך, לבצע (מחקר, ניסוי); לנצח על (תזמורת)",
+      "definition": "to organize and do something, like research or a survey; also, to lead an orchestra",
+      "family": [{ "form": "conductor", "pos": "noun" }],
+      "senses": ["carry out", "lead music"],
+      "meet": {
+        "sentence": "Our class {conducted} a survey about students' sleeping habits.",
+        "options": ["organized and carried out", "refused", "forgot"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "conduct-1", "type": "meaning", "sense": "carry out", "prompt": "to organize and do an activity, such as research or an experiment", "options": ["conduct", "reject", "reveal", "sustain"], "answer": 0 },
+        { "id": "conduct-2", "type": "meaning", "sense": "lead music", "prompt": "to stand in front of musicians and direct them", "options": ["conduct", "address", "contribute", "adapt"], "answer": 0 },
+        { "id": "conduct-3", "type": "cloze", "sense": "carry out", "sentence": "Scientists {_} experiments to test whether the new medicine is safe.", "options": ["conduct", "reject", "reveal", "sustain"], "answer": 0 },
+        { "id": "conduct-4", "type": "cloze", "sense": "lead music", "sentence": "My uncle will {_} the orchestra at tonight's concert.", "options": ["conduct", "achieve", "reject", "sustain"], "answer": 0 },
+        { "id": "conduct-5", "type": "swipe", "sense": "carry out", "sentence": "The police are {conducting} an investigation into the robbery.", "correct": true, "explain": "Correct. You conduct an investigation, a survey or research." },
+        { "id": "conduct-6", "type": "swipe", "sense": "carry out", "sentence": "She {conducted} a glass of water because she was thirsty.", "correct": false, "explain": "Conduct means to carry out an activity or lead musicians. You drink water." },
+        { "id": "conduct-7", "type": "chat", "sense": "carry out", "who": "Ori", "them": "What's your science project about?", "me": "We're going to {_} an experiment with plants and music 🌱🎵", "answer": "conduct", "alsoFits": ["do", "run", "perform"] },
+        { "id": "conduct-8", "type": "chat", "sense": "lead music", "who": "Hila", "them": "Who's the man waving the stick in front of the orchestra?", "me": "That's Mr. Levi! He'll {_} the school orchestra tonight.", "answer": "conduct", "alsoFits": ["lead", "direct"] },
+        { "id": "conduct-9", "type": "family", "sense": "lead music", "sentence": "The {_} raised his hands, and the orchestra began to play.", "answer": "conductor", "hint": "You need a noun for a person. Many words for people end in -or or -er." },
+        { "id": "conduct-10", "type": "cloze", "level": "advanced", "sentence": "Metals like copper {_} electricity very well.", "options": ["conduct", "address", "sustain", "reveal"], "answer": 0, "explain": "Conduct also means to let heat or electricity pass through." }
+      ]
+    },
+    {
+      "word": "maintain",
+      "pos": "verb",
+      "he": "לשמור על, לתחזק; לטעון",
+      "definition": "to keep something in good condition or at the same level; also, to keep saying that something is true",
+      "family": [{ "form": "maintenance", "pos": "noun" }],
+      "senses": ["keep", "claim"],
+      "meet": {
+        "sentence": "It's hard to {maintain} good grades when you work every evening.",
+        "options": ["keep at the same level", "lose", "count"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "maintain-1", "type": "meaning", "sense": "keep", "prompt": "to keep something at the same level or in good condition", "options": ["maintain", "reject", "reveal", "contribute"], "answer": 0 },
+        { "id": "maintain-2", "type": "meaning", "sense": "claim", "prompt": "to keep saying that something is true, even when others disagree", "options": ["maintain", "address", "conduct", "adapt"], "answer": 0 },
+        { "id": "maintain-3", "type": "cloze", "sense": "keep", "sentence": "Old buildings cost a lot of money to {_}.", "options": ["maintain", "reveal", "reject", "achieve"], "answer": 0 },
+        { "id": "maintain-4", "type": "cloze", "sense": "claim", "sentence": "He continues to {_} that he is innocent, but the police don't believe him.", "options": ["maintain", "sustain", "achieve", "conduct"], "answer": 0 },
+        { "id": "maintain-5", "type": "swipe", "sense": "keep", "sentence": "Athletes need to {maintain} a healthy diet all year round.", "correct": true, "explain": "Correct. You maintain a diet, a level, a speed or a building." },
+        { "id": "maintain-6", "type": "swipe", "sense": "keep", "sentence": "I {maintained} my friend a funny video last night.", "correct": false, "explain": "Maintain means to keep something going or in good condition. You send someone a video." },
+        { "id": "maintain-7", "type": "chat", "sense": "keep", "who": "Dana", "them": "Your bike looks brand new! Didn't you buy it like 5 years ago?", "me": "Yes! I clean it every week. You have to {_} a bike if you want it to last.", "answer": "maintain", "alsoFits": ["clean", "fix"] },
+        { "id": "maintain-8", "type": "chat", "sense": "claim", "who": "Eyal", "them": "Did Ben admit he ate your sandwich? 🥪", "me": "No way. He still {_} that it was the dog!", "answer": "maintains", "alsoFits": ["says", "claims", "insists"] },
+        { "id": "maintain-9", "type": "family", "sense": "keep", "sentence": "The pool is closed today for {_}. It will open again tomorrow.", "answer": "maintenance", "hint": "You need a noun. Careful with the spelling: maintain → mainten…" },
+        { "id": "maintain-10", "type": "swipe", "sense": "claim", "sentence": "Scientists {maintain} that the climate is changing faster than expected.", "correct": true, "explain": "Correct. Maintain can mean to say firmly that something is true." },
+        { "id": "maintain-11", "type": "cloze", "level": "advanced", "sentence": "The two countries have {_} good relations for over fifty years.", "options": ["maintained", "achieved", "revealed", "rejected"], "answer": 0, "explain": "'For over fifty years' tells you it's about keeping something going: maintained." }
+      ]
+    },
+    {
+      "word": "adapt",
+      "pos": "verb",
+      "he": "להסתגל; להתאים",
+      "definition": "to change your behaviour, or change something, so it fits a new situation",
+      "family": [
+        { "form": "adaptation", "pos": "noun" },
+        { "form": "adaptable", "pos": "adjective" }
+      ],
+      "confusables": ["adopt"],
+      "meet": {
+        "sentence": "It took my family a few months to {adapt} to life in a new country.",
+        "options": ["get used to it by changing", "run away from it", "forget it"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "adapt-1", "type": "meaning", "prompt": "to change your behaviour, or change something, so it fits a new situation", "options": ["adapt", "adopt", "affect", "achieve"], "answer": 0 },
+        { "id": "adapt-2", "type": "cloze", "sentence": "Animals in the desert {_} to the heat by sleeping during the day.", "options": ["adapt", "adopt", "reject", "contribute"], "answer": 0 },
+        { "id": "adapt-3", "type": "swipe", "sentence": "The movie was {adapted} from a famous novel.", "correct": true, "explain": "Correct. A book can be adapted (changed) into a movie." },
+        { "id": "adapt-4", "type": "swipe", "sentence": "My aunt {adapted} a baby girl from Ethiopia.", "correct": false, "explain": "Careful: you adopt a child (take them into your family). Adapt means to change to fit a new situation." },
+        { "id": "adapt-5", "type": "chat", "who": "Roni", "them": "How's the new school? Do you miss your old friends?", "me": "A little, but I'm starting to {_}. People here are nice 🙂", "answer": "adapt", "alsoFits": ["adjust", "settle"] },
+        { "id": "adapt-6", "type": "chat", "who": "Amit", "them": "Wait, you changed the whole recipe? Why?", "me": "My sister is vegan, so I had to {_} it a bit 🥦", "answer": "adapt", "alsoFits": ["change", "adjust"] },
+        { "id": "adapt-7", "type": "family", "sentence": "Moving to a new city every year is easier for children who are {_}.", "answer": "adaptable", "hint": "You need an adjective after 'are'. Many adjectives end in -able." },
+        { "id": "adapt-8", "type": "cloze", "level": "advanced", "sentence": "The book was {_} into a TV series with eight episodes.", "options": ["adapted", "adopted", "affected", "achieved"], "answer": 0, "explain": "Adapt = change something to fit a new form. Adopt = take as your own (a child, an idea)." }
+      ]
+    },
+    {
+      "word": "affect",
+      "pos": "verb",
+      "he": "להשפיע על",
+      "definition": "to produce a change in someone or something",
+      "family": [],
+      "confusables": ["effect"],
+      "meet": {
+        "sentence": "Lack of sleep can {affect} your mood and your memory.",
+        "options": ["change or influence", "improve", "measure"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "affect-1", "type": "meaning", "prompt": "to produce a change in someone or something", "options": ["affect", "effect", "adapt", "address"], "answer": 0 },
+        { "id": "affect-2", "type": "cloze", "sentence": "The heavy rain will {_} traffic all over the city tomorrow.", "options": ["affect", "effect", "adapt", "reveal"], "answer": 0 },
+        { "id": "affect-3", "type": "swipe", "sentence": "Social media can {affect} how teenagers see themselves.", "correct": true, "explain": "Correct. Affect is a verb: to influence or change something." },
+        { "id": "affect-4", "type": "swipe", "sentence": "The medicine had a strong {affect} on her headache.", "correct": false, "explain": "Careful: here you need the noun, effect. Affect is the verb; effect is the noun." },
+        { "id": "affect-5", "type": "chat", "who": "Shani", "them": "Why are you so tired today? 🥱", "me": "I stayed up until 3. It always {_} my concentration the next day.", "answer": "affects", "alsoFits": ["ruins", "hurts", "kills"] },
+        { "id": "affect-6", "type": "chat", "who": "Nadav", "them": "Is it true that the new road will close the park?", "me": "Yes, and it will {_} everyone who lives nearby.", "answer": "affect", "alsoFits": ["hurt", "impact", "annoy"] },
+        { "id": "affect-7", "type": "pick", "level": "advanced", "options": [
+          { "text": "The war {affected} millions of people.", "correct": true },
+          { "text": "The {effect} of the war was huge.", "correct": true },
+          { "text": "The new rule will {effect} all students.", "correct": false },
+          { "text": "Her speech deeply {affected} the audience.", "correct": true }
+        ], "explain": "Affect is the verb (to influence). Effect is the noun (the result)." },
+        { "id": "affect-8", "type": "cloze", "level": "advanced", "sentence": "Hundreds of families were {_} by the floods.", "options": ["affected", "effected", "adapted", "achieved"], "answer": 0, "explain": "Affected = influenced or harmed by something." }
+      ]
+    }
+  ]
+}
