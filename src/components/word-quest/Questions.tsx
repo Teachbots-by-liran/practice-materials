@@ -35,7 +35,7 @@ function LockNote({ locked }: { locked: boolean }) {
 
 // ── Meet ───────────────────────────────────────────────────────────
 
-export function MeetScreen({ entry, onDone, dock }: { entry: WordEntry; onDone: (guessedRight: boolean) => void; dock: Dock }) {
+export function MeetScreen({ entry, star, onDone, dock }: { entry: WordEntry; star?: boolean; onDone: (guessedRight: boolean) => void; dock: Dock }) {
   const [phase, setPhase] = useState<"guess" | "learn">("guess");
   const [picked, setPicked] = useState<number | null>(null);
   const options = useShuffled(entry.meet.options, entry.word);
@@ -45,7 +45,7 @@ export function MeetScreen({ entry, onDone, dock }: { entry: WordEntry; onDone: 
   if (phase === "guess") {
     return (
       <>
-        <div className="wq-eyebrow">New word · guess first</div>
+        <div className="wq-eyebrow">{star ? "⭐ Extra word · guess first" : "New word · guess first"}</div>
         <div className="wq-word-row">
           <h1 className="wq-big-word">{entry.word}</h1>
           <span className="wq-pos">{entry.pos}</span>

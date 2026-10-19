@@ -167,6 +167,8 @@ export interface StudentProgress {
   name: string;
   listId: string;
   placementDone: boolean;
+  /** Lists the student has done the placement check for. */
+  placedLists?: string[];
   weeklyGoal: number;
   pace: Pace;
   xp: number;

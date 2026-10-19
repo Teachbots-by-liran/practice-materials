@@ -33,6 +33,8 @@ export interface SessionSummary {
 
 interface Props {
   list: WordList;
+  /** Which list each word belongs to (main, add-on, challenge or earlier). */
+  sourceOf: Map<string, string>;
   progress: StudentProgress;
   plan: SessionPlan;
   onProgress: (p: StudentProgress) => void;
@@ -47,7 +49,8 @@ type Feedback =
 const NICE = ["Nice!", "Spot on!", "You got it!", "Great recall!", "Yes!"];
 const MAX_RETRIES_PER_WORD = 2;
 
-export function Session({ list, progress, plan, onProgress, onExit, onFinish }: Props) {
+export function Session({ list, sourceOf, progress, plan, onProgress, onExit, onFinish }: Props) {
+  const src = (word: string) => sourceOf.get(word) ?? list.id;
   const today = useMemo(() => dayKey(), []);
   const entries = useMemo(() => new Map(list.words.map((w) => [w.word, w])), [list]);
   const questions = useMemo(() => {
@@ -106,7 +109,7 @@ export function Session({ list, progress, plan, onProgress, onExit, onFinish }: 
       total: s.total,
       newWords: plan.newWords,
       newlyMastered: Object.values(p.words)
-        .filter((w) => w.stage === "mastered" && w.listId === list.id && !masteredBefore.has(w.word))
+        .filter((w) => w.stage === "mastered" && !masteredBefore.has(w.word))
         .map((w) => w.word),
       again: [...s.again],
       bossWon: s.bossWon,
@@ -132,7 +135,7 @@ export function Session({ list, progress, plan, onProgress, onExit, onFinish }: 
     const ok = r.correct && !verdict.tooFast;
 
     const p = progressRef.current;
-    const s = p.words[word] ?? newWordState(word, list.id, today);
+    const s = p.words[word] ?? newWordState(word, src(word), today);
     const next = applyAnswer(
       s,
       { questionId: qid, correct: r.correct, hinted: r.hinted, tooFast: verdict.tooFast, production: r.production, weight: FORMAT_WEIGHT[r.format] },
@@ -220,7 +223,7 @@ export function Session({ list, progress, plan, onProgress, onExit, onFinish }: 
   const flag = (reason: FlagReason) => {
     if (!flagging) return;
     const p = progressRef.current;
-    update({ ...p, flags: [...p.flags, { listId: list.id, questionId: flagging, reason, date: today }] });
+    update({ ...p, flags: [...p.flags, { listId: src(questions.get(flagging)?.entry.word ?? ""), questionId: flagging, reason, date: today }] });
     setFlagging(null);
     showToast("Thanks! Your teacher will check it.");
     advance();
@@ -245,10 +248,11 @@ export function Session({ list, progress, plan, onProgress, onExit, onFinish }: 
     screen = (
       <MeetScreen
         entry={entry}
+        star={plan.starWords.includes(entry.word)}
         dock={dock}
         onDone={() => {
           const p = progressRef.current;
-          if (!p.words[item.word]) update({ ...p, words: { ...p.words, [item.word]: newWordState(item.word, list.id, today) } });
+          if (!p.words[item.word]) update({ ...p, words: { ...p.words, [item.word]: newWordState(item.word, src(item.word), today) } });
           advance();
         }}
       />
@@ -316,7 +320,7 @@ export function Session({ list, progress, plan, onProgress, onExit, onFinish }: 
             const p = progressRef.current;
             stats.current.xp += 20;
             stats.current.wrote = true;
-            update({ ...p, xp: p.xp + 20, sentences: [...p.sentences, { word: item.word, listId: list.id, text, date: today }] });
+            update({ ...p, xp: p.xp + 20, sentences: [...p.sentences, { word: item.word, listId: src(item.word), text, date: today }] });
             showToast("+20 XP · Saved for your teacher");
             playSound("good", sound);
           }

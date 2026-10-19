@@ -191,11 +191,23 @@ export interface SessionPlan {
   items: SessionItem[];
   newWords: string[];
   reviewWords: string[];
+  /** New words from add-on or challenge lists, shown with a ⭐. */
+  starWords: string[];
   reason: BudgetReason;
 }
 
-export function listStates(p: StudentProgress, listId: string): WordState[] {
-  return Object.values(p.words).filter((s) => s.listId === listId);
+/** Progress for the words in a list. A word learned in one list counts in every list that has it. */
+export function listStates(p: StudentProgress, list: WordList): WordState[] {
+  return list.words.map((w) => p.words[w.word]).filter((s): s is WordState => !!s);
+}
+
+/** The main list plus any extra lists, without duplicate words. Reviews and the boss round use this. */
+export function combineLists(main: WordList, extras: WordList[] = []): WordList {
+  if (!extras.length) return main;
+  const seen = new Set(main.words.map((w) => w.word));
+  const words = [...main.words];
+  for (const l of extras) for (const w of l.words) if (!seen.has(w.word)) (seen.add(w.word), words.push(w));
+  return { ...main, words };
 }
 
 export function recentAccuracy(p: StudentProgress, n = 30): number | null {
@@ -204,9 +216,9 @@ export function recentAccuracy(p: StudentProgress, n = 30): number | null {
   return recent.filter((a) => a.correct && !a.tooFast).length / recent.length;
 }
 
-export function newThisWeek(p: StudentProgress, listId: string, today: string): number {
+export function newThisWeek(p: StudentProgress, list: WordList, today: string): number {
   const start = weekStart(today);
-  return listStates(p, listId).filter((s) => !s.known && s.introduced >= start).length;
+  return listStates(p, list).filter((s) => !s.known && s.introduced >= start).length;
 }
 
 function reviewPriority(s: WordState, today: string): number {
@@ -215,8 +227,8 @@ function reviewPriority(s: WordState, today: string): number {
   return (s.lastCorrect === false ? 100 : 0) + urgency * 10 + s.lapses;
 }
 
-export function dueWords(p: StudentProgress, listId: string, today: string): WordState[] {
-  return listStates(p, listId)
+export function dueWords(p: StudentProgress, list: WordList, today: string): WordState[] {
+  return listStates(p, list)
     .filter((s) => s.due <= today)
     .sort((a, b) => reviewPriority(b, today) - reviewPriority(a, today));
 }
@@ -226,13 +238,14 @@ export function newWordBudget(
   list: WordList,
   today: string,
   extra = 0,
+  reviewList: WordList = list,
 ): { count: number; reason: BudgetReason } {
   const unseen = list.words.filter((w) => !p.words[w.word]).length;
   if (unseen === 0) return { count: 0, reason: "list-done" };
   if (extra > 0) return { count: Math.min(extra, unseen), reason: "extra" };
-  if (dueWords(p, list.id, today).length > MAX_REVIEWS) return { count: 0, reason: "catch-up" };
+  if (dueWords(p, reviewList, today).length > MAX_REVIEWS) return { count: 0, reason: "catch-up" };
 
-  const remaining = p.weeklyGoal - newThisWeek(p, list.id, today);
+  const remaining = p.weeklyGoal - newThisWeek(p, list, today);
   if (remaining <= 0) return { count: 0, reason: "goal-met" };
   let count = Math.min(MAX_NEW[p.pace], Math.ceil(remaining / daysLeftInWeek(today)), unseen);
   const acc = recentAccuracy(p);
@@ -261,17 +274,40 @@ export function pickNewWords(p: StudentProgress, list: WordList, count: number, 
   return picked;
 }
 
-export function buildSession(
-  list: WordList,
-  p: StudentProgress,
-  today: string,
-  rng: Rng,
-  opts: { extraNew?: number } = {},
-): SessionPlan {
+export interface SessionOptions {
+  /** "Learn 3 extra words" on a day with nothing else to do. */
+  extraNew?: number;
+  /** Add-on and unlocked challenge lists, mixed into the same session. */
+  extras?: WordList[];
+  /** Earlier lists: no new words from them, but their words keep coming back for review. */
+  reviewOnly?: WordList[];
+  /** Words the teacher pushed into everyone's boss round this week. */
+  focus?: string[];
+}
+
+/** New words per session from extra lists: on top of the main list, not instead of it. */
+function extraWordCount(reason: BudgetReason): number {
+  if (reason === "catch-up" || reason === "struggling") return 0;
+  if (reason === "list-done") return 3;
+  return 2;
+}
+
+export function buildSession(main: WordList, p: StudentProgress, today: string, rng: Rng, opts: SessionOptions = {}): SessionPlan {
+  const extras = opts.extras ?? [];
+  const list = combineLists(main, [...extras, ...(opts.reviewOnly ?? [])]);
   const entries = new Map(list.words.map((w) => [w.word, w]));
-  const reviews = dueWords(p, list.id, today).slice(0, MAX_REVIEWS);
-  const budget = newWordBudget(p, list, today, opts.extraNew);
-  const fresh = pickNewWords(p, list, budget.count, today);
+  const reviews = dueWords(p, list, today).slice(0, MAX_REVIEWS);
+  const budget = newWordBudget(p, main, today, opts.extraNew, list);
+  const mainFresh = pickNewWords(p, main, budget.count, today);
+  const starFresh: WordEntry[] = [];
+  let starLeft = extraWordCount(budget.reason);
+  for (const l of extras) {
+    if (starLeft <= 0) break;
+    const picked = pickNewWords(p, { ...l, words: l.words.filter((w) => !mainFresh.some((m) => m.word === w.word)) }, starLeft, today);
+    starFresh.push(...picked);
+    starLeft -= picked.length;
+  }
+  const fresh = [...mainFresh, ...starFresh];
   const used = new Set<string>();
   const items: SessionItem[] = [];
   let typed = 0;
@@ -325,24 +361,32 @@ export function buildSession(
 
   // One optional "write your own sentence" for a word the student is getting comfortable with.
   const writeWord = reviews.find(
-    (r) => r.stage !== "learning" && !p.sentences.some((s) => s.word === r.word && s.listId === list.id),
+    (r) => r.stage !== "learning" && !p.sentences.some((s) => s.word === r.word),
   );
   if (writeWord) items.push({ kind: "write", word: writeWord.word });
 
-  const boss = bossItems(list, p, sessionWords, rng);
+  const boss = bossItems(list, p, sessionWords, rng, opts.focus);
   if (boss.length >= 3) items.push({ kind: "boss", items: boss });
 
-  return { items, newWords: fresh.map((w) => w.word), reviewWords: reviews.map((r) => r.word), reason: budget.reason };
+  return {
+    items,
+    newWords: fresh.map((w) => w.word),
+    reviewWords: reviews.map((r) => r.word),
+    starWords: starFresh.map((w) => w.word),
+    reason: budget.reason,
+  };
 }
 
 /** The student's trickiest words: most misses overall, topped up with today's words. */
-export function bossItems(list: WordList, p: StudentProgress, sessionWords: string[], rng: Rng) {
+export function bossItems(list: WordList, p: StudentProgress, sessionWords: string[], rng: Rng, focus: string[] = []) {
   const entries = new Map(list.words.map((w) => [w.word, w]));
-  const tricky = listStates(p, list.id)
+  const tricky = listStates(p, list)
     .filter((s) => s.lapses > 0)
     .sort((a, b) => b.lapses - a.lapses)
     .map((s) => s.word);
-  const words = [...new Set([...tricky, ...shuffle(sessionWords, rng)])];
+  // The teacher's focus words come first, but only ones this student has already met.
+  const focused = focus.filter((w) => p.words[w] && entries.has(w));
+  const words = [...new Set([...focused, ...tricky, ...shuffle(sessionWords, rng)])];
   const out: { word: string; qid: string }[] = [];
   for (const word of words) {
     if (out.length >= 4) break;
@@ -383,7 +427,7 @@ export function applyPlacement(p: StudentProgress, list: WordList, knownWords: s
     s.due = addDays(today, i % 5);
     words[word] = s;
   });
-  return { ...p, words, placementDone: true };
+  return { ...p, words, placementDone: true, placedLists: [...new Set([...(p.placedLists ?? []), list.id])] };
 }
 
 export function shuffle<T>(arr: T[], rng: Rng): T[] {

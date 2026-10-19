@@ -3,8 +3,11 @@
 import { useState } from "react";
 import { addDays, weekStart } from "@/lib/vocab/dates";
 import { listStats, streak } from "@/lib/vocab/progress";
-import { dueWords, MAX_REVIEWS, newWordBudget } from "@/lib/vocab/scheduler";
+import { CHALLENGE_UNLOCK, type StudyConfig } from "@/lib/vocab/classroom";
+import { dueWords, listStates, MAX_REVIEWS, newWordBudget } from "@/lib/vocab/scheduler";
+import { masteredShare, type StudyLists } from "@/lib/vocab/study";
 import type { StudentProgress, WordList } from "@/lib/vocab/types";
+import type { CloudSession } from "./cloud";
 
 const C = 2 * Math.PI * 37;
 
@@ -23,7 +26,17 @@ export function Ring({ n, of }: { n: number; of: number }) {
   );
 }
 
-export function WeekPanel({ progress, list, today }: { progress: StudentProgress; list: WordList; today: string }) {
+export function WeekPanel({
+  progress,
+  list,
+  today,
+  lists,
+}: {
+  progress: StudentProgress;
+  list: WordList;
+  today: string;
+  lists?: StudyLists;
+}) {
   const st = listStats(progress, list, today);
   const pct = (n: number) => `${(n / Math.max(1, st.total)) * 100}%`;
   const left = Math.max(0, progress.weeklyGoal - st.newThisWeek);
@@ -63,6 +76,24 @@ export function WeekPanel({ progress, list, today }: { progress: StudentProgress
           {st.notStarted} to go
         </span>
       </div>
+      {lists?.extras.map(({ list: l, role }) => (
+        <div key={l.id} className="wq-goal-row">
+          <b>
+            ⭐ {role === "challenge" ? "Challenge unlocked" : "Extra"}: {l.title}
+          </b>
+          <span>
+            {listStates(progress, l).length}/{l.words.length}
+          </span>
+        </div>
+      ))}
+      {lists?.lockedChallenge && (
+        <div className="wq-goal-row">
+          <span>🔒 Challenge: {lists.lockedChallenge.title}</span>
+          <span>
+            unlocks at {Math.round(CHALLENGE_UNLOCK * 100)}% · now {Math.round(masteredShare(progress, list) * 100)}%
+          </span>
+        </div>
+      )}
     </div>
   );
 }
@@ -97,22 +128,32 @@ export function StreakPanel({ progress, today, bump = false }: { progress: Stude
 
 interface Props {
   progress: StudentProgress;
-  list: WordList;
+  lists: StudyLists;
+  config: StudyConfig;
+  session: CloudSession | null;
+  offline: boolean;
+  canJoin: boolean;
   today: string;
   onStart: (extraNew?: number) => void;
   onProgress: (p: StudentProgress) => void;
-  onReset: () => void;
+  onJoin: () => void;
+  onSignOut: () => void;
 }
 
-export function Home({ progress, list, today, onStart, onProgress, onReset }: Props) {
+export function Home({ progress, lists, session, offline, canJoin, today, onStart, onProgress, onJoin, onSignOut }: Props) {
   const [confirmReset, setConfirmReset] = useState(false);
-  const due = dueWords(progress, list.id, today).length;
+  const list = lists.main;
+  const due = dueWords(progress, lists.combined, today).length;
   const reviews = Math.min(due, MAX_REVIEWS);
-  const budget = newWordBudget(progress, list, today);
-  const unseen = list.words.filter((w) => !progress.words[w.word]).length;
-  const hasWork = reviews > 0 || budget.count > 0;
-  const minutes = Math.max(2, Math.round((reviews * 0.4 + budget.count * 1.2) + 1));
-  const mastered = Object.values(progress.words).filter((s) => s.listId === list.id && s.stage === "mastered");
+  const budget = newWordBudget(progress, list, today, 0, lists.combined);
+  const extraUnseen = lists.extras.reduce((n, e) => n + e.list.words.filter((w) => !progress.words[w.word]).length, 0);
+  const unseen = list.words.filter((w) => !progress.words[w.word]).length + extraUnseen;
+  const starNew =
+    budget.reason === "catch-up" || budget.reason === "struggling" ? 0 : Math.min(extraUnseen, budget.reason === "list-done" ? 3 : 2);
+  const newCount = budget.count + starNew;
+  const hasWork = reviews > 0 || newCount > 0;
+  const minutes = Math.max(2, Math.round(reviews * 0.4 + newCount * 1.2 + 1));
+  const mastered = Object.values(progress.words).filter((s) => s.stage === "mastered");
 
   let title = "Today's practice";
   let text: string;
@@ -121,14 +162,18 @@ export function Home({ progress, list, today, onStart, onProgress, onReset }: Pr
     text = "Let's lock in the words you've already learned. No new words today.";
   } else if (!hasWork) {
     title = "All done for today ✓";
-    text = unseen > 0 ? "Your reviews are done. Come back tomorrow, or learn a few extra words now." : "You've met every word in this list. Your reviews will keep coming back.";
-  } else if (budget.reason === "goal-met") {
+    text =
+      unseen > 0
+        ? "Your reviews are done. Come back tomorrow, or learn a few extra words now."
+        : "You've met every word in your lists. Your reviews will keep coming back.";
+  } else if (budget.reason === "goal-met" && !starNew) {
     title = "Weekly goal reached 🎉";
     text = `Today: ${reviews} ${reviews === 1 ? "review" : "reviews"} to keep your words strong.`;
   } else if (budget.reason === "struggling") {
     text = "One new word today, and some practice on the words you've met.";
   } else {
-    text = `Hi ${progress.name}! ${budget.count > 0 ? `${budget.count} new ${budget.count === 1 ? "word is" : "words are"} waiting` : "Your reviews are waiting"}${budget.count > 0 && reviews > 0 ? ", plus a few to review" : ""}.`;
+    const waiting = newCount > 0 ? `${newCount} new ${newCount === 1 ? "word is" : "words are"} waiting` : "Your reviews are waiting";
+    text = `Hi ${progress.name}! ${waiting}${newCount > 0 && reviews > 0 ? ", plus a few to review" : ""}.`;
   }
 
   return (
@@ -138,10 +183,16 @@ export function Home({ progress, list, today, onStart, onProgress, onReset }: Pr
           <div className="wq-logo">
             Word<span>Quest</span>
           </div>
-          <span className="wq-sub">{progress.xp} XP</span>
+          <span className="wq-sub">
+            {session ? `${session.className} · ` : ""}
+            {progress.xp} XP
+          </span>
         </div>
+        {offline && session && (
+          <div className="wq-note-box">You&apos;re offline. Keep practising: your progress will sync when you&apos;re back online.</div>
+        )}
 
-        <WeekPanel progress={progress} list={list} today={today} />
+        <WeekPanel progress={progress} list={list} today={today} lists={lists} />
 
         <div className="wq-panel wq-today">
           <h2>{title}</h2>
@@ -149,7 +200,12 @@ export function Home({ progress, list, today, onStart, onProgress, onReset }: Pr
           {hasWork && (
             <div className="wq-meta">
               {budget.count > 0 && <span>{budget.count} new</span>}
-              {reviews > 0 && <span>{reviews} {reviews === 1 ? "review" : "reviews"}</span>}
+              {starNew > 0 && <span>⭐ {starNew} extra</span>}
+              {reviews > 0 && (
+                <span>
+                  {reviews} {reviews === 1 ? "review" : "reviews"}
+                </span>
+              )}
               <span>Boss round</span>
               <span>~{minutes} min</span>
             </div>
@@ -188,18 +244,36 @@ export function Home({ progress, list, today, onStart, onProgress, onReset }: Pr
               onChange={(e) => onProgress({ ...progress, settings: { ...progress.settings, sound: e.target.checked } })}
             />
           </label>
+          {session ? (
+            <span className="wq-sub">
+              Signed in as <b>{session.nickname}</b> in {session.className}
+            </span>
+          ) : (
+            canJoin && (
+              <button className="wq-btn wq-btn-ghost" onClick={onJoin}>
+                Join a class
+              </button>
+            )
+          )}
           {confirmReset ? (
-            <div className="wq-row">
-              <button className="wq-btn wq-btn-ghost" onClick={() => setConfirmReset(false)}>
-                Cancel
-              </button>
-              <button className="wq-btn wq-btn-ghost" style={{ color: "var(--bad)" }} onClick={onReset}>
-                Delete progress
-              </button>
-            </div>
+            <>
+              <span className="wq-sub">
+                {session
+                  ? "This removes your progress from this phone. It stays saved in your class: sign in again with your name and PIN."
+                  : "This deletes all your progress on this phone."}
+              </span>
+              <div className="wq-row">
+                <button className="wq-btn wq-btn-ghost" onClick={() => setConfirmReset(false)}>
+                  Cancel
+                </button>
+                <button className="wq-btn wq-btn-ghost" style={{ color: "var(--bad)" }} onClick={onSignOut}>
+                  {session ? "Sign out" : "Delete progress"}
+                </button>
+              </div>
+            </>
           ) : (
             <button className="wq-btn-link" style={{ textAlign: "left" }} onClick={() => setConfirmReset(true)}>
-              Start over on this phone…
+              {session ? "Sign out on this phone…" : "Start over on this phone…"}
             </button>
           )}
         </div>

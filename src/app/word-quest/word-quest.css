@@ -199,6 +199,7 @@
 
 /* home */
 .wq-home-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.wq-home-head > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .wq-logo { font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: -.01em; }
 .wq-logo span { color: var(--brand); }
 .wq-panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; display: grid; gap: 10px; }

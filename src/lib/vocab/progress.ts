@@ -91,14 +91,14 @@ export interface ListStats {
 }
 
 export function listStats(p: StudentProgress, list: WordList, today: string): ListStats {
-  const states = listStates(p, list.id);
+  const states = listStates(p, list);
   const mastered = states.filter((s) => s.stage === "mastered").length;
   return {
     total: list.words.length,
     mastered,
     learning: states.length - mastered,
     notStarted: list.words.length - states.length,
-    newThisWeek: newThisWeek(p, list.id, today),
+    newThisWeek: newThisWeek(p, list, today),
   };
 }
 

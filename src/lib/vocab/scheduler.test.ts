@@ -149,10 +149,11 @@ describe("new word budget", () => {
   });
 
   it("stops new words on a catch-up day", () => {
+    const big: WordList = { id: "big", title: "Big", words: Array.from({ length: 15 }, (_, i) => entry(`w${i}`)) };
     const words = Object.fromEntries(
-      Array.from({ length: 13 }, (_, i) => [`w${i}`, { ...newWordState(`w${i}`, "test", "2026-10-01"), due: "2026-10-10" }]),
+      Array.from({ length: 13 }, (_, i) => [`w${i}`, { ...newWordState(`w${i}`, "big", "2026-10-01"), due: "2026-10-10" }]),
     );
-    expect(newWordBudget(progress({ words }), LIST, TODAY).reason).toBe("catch-up");
+    expect(newWordBudget(progress({ words }), big, TODAY).reason).toBe("catch-up");
   });
 
   it("slows down when accuracy drops", () => {
@@ -179,6 +180,21 @@ describe("buildSession", () => {
       expect(kinds[0]).toBe("meet");
       expect(kinds.length).toBeGreaterThanOrEqual(3);
     }
+  });
+
+  it("adds a couple of ⭐ words from an extra list on top of the main list", () => {
+    const extra: WordList = { id: "extra", title: "Extra", words: [entry("benefit"), entry("barrier"), entry("conduct")] };
+    const plan = buildSession(LIST, progress(), TODAY, seededRng(3), { extras: [extra] });
+    expect(plan.newWords).toHaveLength(5);
+    expect(plan.starWords).toEqual(["benefit", "barrier"]);
+  });
+
+  it("keeps reviewing words from earlier lists without adding new ones from them", () => {
+    const old: WordList = { id: "old", title: "Old", words: [entry("benefit"), entry("barrier")] };
+    const words = { benefit: { ...newWordState("benefit", "old", "2026-10-01"), reps: 2, stage: "review" as const, interval: 3, due: TODAY } };
+    const plan = buildSession(LIST, progress({ words }), TODAY, seededRng(4), { reviewOnly: [old] });
+    expect(plan.reviewWords).toContain("benefit");
+    expect(plan.newWords).not.toContain("barrier");
   });
 
   it("puts due reviews in the session and adds a boss round", () => {
