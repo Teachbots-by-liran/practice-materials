@@ -18,9 +18,9 @@ export interface GuessVerdict {
   lockMs: number;
 }
 
-/** About 40 characters per second is skimming; anything faster can't have been read. */
+/** 50 characters per second is fast skimming; anything quicker can't have been read. */
 export function minReadMs(chars: number): number {
-  return Math.max(700, chars * 25);
+  return Math.max(600, chars * 20);
 }
 
 export class GuessMonitor {

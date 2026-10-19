@@ -153,6 +153,15 @@ export interface AnswerRecord {
 
 export type Pace = "steady" | "normal" | "boost";
 
+export type FlagReason = "wrong-answer" | "two-answers" | "translation" | "confusing";
+
+export interface QuestionFlag {
+  listId: string;
+  questionId: string;
+  reason: FlagReason;
+  date: string;
+}
+
 export interface StudentProgress {
   version: 1;
   name: string;
@@ -165,5 +174,6 @@ export interface StudentProgress {
   words: Record<string, WordState>;
   answers: AnswerRecord[];
   sentences: WrittenSentence[];
+  flags: QuestionFlag[];
   settings: { sound: boolean };
 }

@@ -53,6 +53,7 @@ function progress(extra: Partial<StudentProgress> = {}): StudentProgress {
     words: {},
     answers: [],
     sentences: [],
+    flags: [],
     settings: { sound: true },
     ...extra,
   };

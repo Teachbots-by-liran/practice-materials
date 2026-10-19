@@ -30,6 +30,22 @@ const tools: Tool[] = [
     accentColor: "#6366f1",
     accentBg: "linear-gradient(135deg, #ede9fe 0%, #e0e7ff 100%)",
   },
+  {
+    href: "/word-quest",
+    title: "Word Quest",
+    description:
+      "Students practise Band III vocabulary on their phones a few minutes a day, with spaced review, word families and a boss round.",
+    badge: "Vocabulary",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="5" y="2" width="14" height="20" rx="2.5"/>
+        <path d="M9 7h6M9 11h6M9 15h3"/>
+      </svg>
+    ),
+    accentColor: "#ea580c",
+    accentBg: "linear-gradient(135deg, #ffedd5 0%, #fee2e2 100%)",
+  },
 ];
 
 export default function HomePage() {
