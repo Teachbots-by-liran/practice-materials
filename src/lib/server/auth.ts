@@ -7,11 +7,17 @@ export const TEACHER_COOKIE = "wq_teacher";
 const TEACHER_DAYS = 30;
 const STUDENT_DAYS = 365;
 
-function secret(): string {
+function secretOrNull(): string | null {
   const s = process.env.SESSION_SECRET;
   if (s && s.length >= 16) return s;
   if (process.env.NODE_ENV !== "production") return "dev-only-secret-not-for-production";
-  throw new Error("SESSION_SECRET is not set (needs at least 16 characters).");
+  return null;
+}
+
+function secret(): string {
+  const s = secretOrNull();
+  if (!s) throw new Error("SESSION_SECRET is not set (needs at least 16 characters).");
+  return s;
 }
 
 const b64 = (s: string | Buffer) => Buffer.from(s).toString("base64url");
@@ -28,7 +34,9 @@ export function verifyToken(token: string | undefined | null): (TokenPayload & {
   if (!token) return null;
   const [body, sig] = token.split(".");
   if (!body || !sig) return null;
-  const expected = crypto.createHmac("sha256", secret()).update(body).digest();
+  const key = secretOrNull();
+  if (!key) return null;
+  const expected = crypto.createHmac("sha256", key).update(body).digest();
   const given = Buffer.from(sig, "base64url");
   if (given.length !== expected.length || !crypto.timingSafeEqual(given, expected)) return null;
   try {
@@ -68,8 +76,9 @@ export function checkTeacherPassword(given: string): boolean {
   return crypto.timingSafeEqual(a, b);
 }
 
+/** Sign-in needs both the password and a secret to sign the session with. */
 export function teacherPasswordConfigured(): boolean {
-  return !!process.env.TEACHER_PASSWORD;
+  return !!process.env.TEACHER_PASSWORD && secretOrNull() !== null;
 }
 
 export function hashPin(pin: string): string {

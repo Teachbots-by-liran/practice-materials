@@ -3,7 +3,7 @@ import { checkTeacherPassword, TEACHER_COOKIE, teacherCookieOptions, teacherPass
 
 export async function POST(req: NextRequest) {
   if (!teacherPasswordConfigured()) {
-    return NextResponse.json({ error: "TEACHER_PASSWORD isn't set on the server yet." }, { status: 503 });
+    return NextResponse.json({ error: "TEACHER_PASSWORD and SESSION_SECRET aren't both set on the server yet." }, { status: 503 });
   }
   const { password } = (await req.json().catch(() => ({}))) as { password?: string };
   // A short pause makes guessing the password slow.

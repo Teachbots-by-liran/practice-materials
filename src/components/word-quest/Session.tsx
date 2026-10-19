@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { dayKey } from "@/lib/vocab/dates";
 import { GuessMonitor } from "@/lib/vocab/guessing";
@@ -49,7 +49,10 @@ type Feedback =
 const NICE = ["Nice!", "Spot on!", "You got it!", "Great recall!", "Yes!"];
 const MAX_RETRIES_PER_WORD = 2;
 
-export function Session({ list, sourceOf, progress, plan, onProgress, onExit, onFinish }: Props) {
+export function Session({ list: listProp, sourceOf, progress, plan, onProgress, onExit, onFinish }: Props) {
+  // The session keeps the questions it started with. Reporting a question hides it from
+  // future sessions, but items already planned for this one must still find it.
+  const [list] = useState(listProp);
   const src = (word: string) => sourceOf.get(word) ?? list.id;
   const today = useMemo(() => dayKey(), []);
   const entries = useMemo(() => new Map(list.words.map((w) => [w.word, w])), [list]);
@@ -224,6 +227,7 @@ export function Session({ list, sourceOf, progress, plan, onProgress, onExit, on
     if (!flagging) return;
     const p = progressRef.current;
     update({ ...p, flags: [...p.flags, { listId: src(questions.get(flagging)?.entry.word ?? ""), questionId: flagging, reason, date: today }] });
+    used.current.add(flagging);
     setFlagging(null);
     showToast("Thanks! Your teacher will check it.");
     advance();
@@ -353,6 +357,13 @@ export function Session({ list, sourceOf, progress, plan, onProgress, onExit, on
       />
     );
   }
+
+  // Safety net: an item that can't be shown (e.g. its question no longer exists) is skipped.
+  const missing = !!item && screen === null;
+  useEffect(() => {
+    if (missing) advance();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [missing, idx]);
 
   const mult = combo >= 5 ? 3 : combo >= 3 ? 2 : 1;
 

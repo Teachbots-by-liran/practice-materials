@@ -29,8 +29,9 @@ export function Placement({ list, onDone }: { list: WordList; onDone: (known: st
           <div className="wq-eyebrow">Before we start</div>
           <h1 className="wq-prompt">Quick check: which words do you already know?</h1>
           <p className="wq-sub">
-            {items.length} quick questions, about 2 minutes. If you don&apos;t know a word, tap “I don&apos;t know”. That&apos;s
-            what it&apos;s for, and it helps the app pick the right practice for you.
+            {`${items.length} quick questions, about ${Math.max(1, Math.round(items.length / 6))} ${items.length > 6 ? "minutes" : "minute"}. `}
+            If you don&apos;t know a word, tap “I don&apos;t know”. That&apos;s what it&apos;s for, and it helps the app pick the right
+            practice for you.
           </p>
           <p className="wq-sub">Words you already know won&apos;t be skipped. You&apos;ll get harder questions for them.</p>
         </main>
