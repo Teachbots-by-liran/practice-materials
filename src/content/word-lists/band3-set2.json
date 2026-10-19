@@ -1,0 +1,291 @@
+{
+  "id": "band3-set2",
+  "title": "Band III · Set 2",
+  "words": [
+    {
+      "word": "evaluate",
+      "pos": "verb",
+      "he": "להעריך, לבחון",
+      "definition": "to judge how good, useful or successful something is",
+      "family": [{ "form": "evaluation", "pos": "noun" }],
+      "meet": {
+        "sentence": "At the end of the year, the teachers {evaluate} every student's project.",
+        "options": ["judge how good it is", "throw it away", "copy it"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "evaluate-1", "type": "meaning", "prompt": "to judge how good, useful or successful something is", "options": ["evaluate", "reduce", "ensure", "reflect"], "answer": 0 },
+        { "id": "evaluate-2", "type": "cloze", "sentence": "Before choosing a university, it's smart to {_} all your options carefully.", "options": ["evaluate", "reduce", "ensure", "impact"], "answer": 0 },
+        { "id": "evaluate-3", "type": "swipe", "sentence": "The judges will {evaluate} each song and choose a winner.", "correct": true, "explain": "Correct. Judges evaluate: they decide how good something is." },
+        { "id": "evaluate-4", "type": "swipe", "sentence": "I {evaluated} my sandwich because I was really hungry.", "correct": false, "explain": "Evaluate means to judge how good something is. When you're hungry, you eat your sandwich." },
+        { "id": "evaluate-5", "type": "chat", "who": "Yael", "them": "Did the teacher like your presentation? 😬", "me": "She'll {_} it tomorrow and give us feedback.", "answer": "evaluate", "alsoFits": ["grade", "check", "mark", "review"] },
+        { "id": "evaluate-6", "type": "chat", "who": "Tomer", "them": "Why do you read so many reviews before buying a phone?", "me": "I want to {_} every option before I spend 3,000 shekels!", "answer": "evaluate", "alsoFits": ["compare", "check", "see", "consider"] },
+        { "id": "evaluate-7", "type": "family", "sentence": "The teacher's {_} of my essay was very fair.", "answer": "evaluation", "hint": "You need a noun after 'the teacher's'. Many nouns end in -ion." },
+        { "id": "evaluate-8", "type": "cloze", "level": "advanced", "sentence": "The new program will be {_} after six months to see if it really works.", "options": ["evaluated", "reduced", "ensured", "reflected"], "answer": 0, "explain": "'To see if it really works' means judging it: evaluated." }
+      ]
+    },
+    {
+      "word": "ensure",
+      "pos": "verb",
+      "he": "לוודא, להבטיח",
+      "definition": "to make certain that something happens or is true",
+      "family": [],
+      "meet": {
+        "sentence": "Please check the address twice to {ensure} the letter arrives on time.",
+        "options": ["make sure", "stop", "forget"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "ensure-1", "type": "meaning", "prompt": "to make certain that something happens or is true", "options": ["ensure", "evaluate", "reduce", "reflect"], "answer": 0 },
+        { "id": "ensure-2", "type": "cloze", "sentence": "Wear a helmet to {_} that you stay safe on your bike.", "options": ["ensure", "evaluate", "reflect", "reduce"], "answer": 0 },
+        { "id": "ensure-3", "type": "swipe", "sentence": "The school hired more guards to {ensure} that students are safe.", "correct": true, "explain": "Correct. Ensure = make certain that something happens." },
+        { "id": "ensure-4", "type": "swipe", "sentence": "My grandmother {ensured} me a cup of tea when I visited.", "correct": false, "explain": "Ensure means to make certain. Your grandmother made or gave you tea." },
+        { "id": "ensure-5", "type": "chat", "who": "Liat", "them": "Are you sure we'll get tickets for the concert? 🎤", "me": "Yes! I'll buy them online tonight to {_} we get good seats.", "answer": "ensure", "alsoFits": ["guarantee"] },
+        { "id": "ensure-6", "type": "chat", "who": "Avi", "them": "Why do you always set three alarms? 😂", "me": "To {_} I'm never late for the bus again!", "answer": "ensure", "alsoFits": ["guarantee", "promise"] },
+        { "id": "ensure-7", "type": "pick", "level": "advanced", "options": [
+          { "text": "Good planning helps {ensure} success.", "correct": true },
+          { "text": "The coach {ensured} that every player had water.", "correct": true },
+          { "text": "She {ensured} her keys in her bag.", "correct": false },
+          { "text": "I {ensured} a new pair of shoes at the mall.", "correct": false }
+        ], "explain": "You ensure that something happens (make certain). You put keys in a bag and buy shoes." }
+      ]
+    },
+    {
+      "word": "reduce",
+      "pos": "verb",
+      "he": "להפחית, לצמצם",
+      "definition": "to make something smaller in size, amount or number",
+      "family": [{ "form": "reduction", "pos": "noun" }],
+      "meet": {
+        "sentence": "The city wants to {reduce} traffic by building more bike lanes.",
+        "options": ["make it smaller or less", "make it bigger", "pay for it"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "reduce-1", "type": "meaning", "prompt": "to make something smaller in size, amount or number", "options": ["reduce", "ensure", "evaluate", "reflect"], "answer": 0 },
+        { "id": "reduce-2", "type": "cloze", "sentence": "Turning off the lights when you leave a room can {_} your electricity bill.", "options": ["reduce", "evaluate", "ensure", "reflect"], "answer": 0 },
+        { "id": "reduce-3", "type": "swipe", "sentence": "Drinking less soda can {reduce} the risk of health problems.", "correct": true, "explain": "Correct. You can reduce a risk, a price, an amount or a number." },
+        { "id": "reduce-4", "type": "swipe", "sentence": "He {reduced} the stairs to the third floor.", "correct": false, "explain": "Reduce means to make something smaller or less. On stairs, you climb or go up." },
+        { "id": "reduce-5", "type": "chat", "who": "Michal", "them": "You're on your phone way less lately. How?", "me": "I turned off notifications to {_} how much I use it 📵", "answer": "reduce", "alsoFits": ["limit", "cut", "lower"] },
+        { "id": "reduce-6", "type": "chat", "who": "Gil", "them": "Did the store really lower the prices for Black Friday?", "me": "Yes! They {_} everything by 30%. I got new headphones 🎧", "answer": "reduced", "alsoFits": ["cut", "lowered", "dropped"] },
+        { "id": "reduce-7", "type": "family", "sentence": "There was a big {_} in the number of car accidents after the new law.", "answer": "reduction", "hint": "You need a noun after 'a big'. Many nouns end in -tion." },
+        { "id": "reduce-8", "type": "cloze", "level": "advanced", "sentence": "The fire {_} the old building to ashes in just one hour.", "options": ["reduced", "ensured", "evaluated", "reflected"], "answer": 0, "explain": "Reduce something to ashes (or pieces) = destroy it until only that is left." }
+      ]
+    },
+    {
+      "word": "reflect",
+      "pos": "verb",
+      "he": "לשקף; להרהר, לחשוב לעומק על",
+      "definition": "to show what something is like; also, to think carefully about something",
+      "family": [{ "form": "reflection", "pos": "noun" }],
+      "senses": ["show", "think about"],
+      "meet": {
+        "sentence": "Her excellent grades {reflect} how hard she worked this year.",
+        "options": ["show", "hide", "change"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "reflect-1", "type": "meaning", "sense": "show", "prompt": "to show what something is like, or to be a sign of it", "options": ["reflect", "reduce", "ensure", "evaluate"], "answer": 0 },
+        { "id": "reflect-2", "type": "meaning", "sense": "think about", "prompt": "to think carefully and seriously about something", "options": ["reflect", "reduce", "ensure", "impact"], "answer": 0 },
+        { "id": "reflect-3", "type": "cloze", "sense": "show", "sentence": "The colorful paintings on the walls {_} the happy mood of the school.", "options": ["reflect", "reduce", "ensure", "evaluate"], "answer": 0 },
+        { "id": "reflect-4", "type": "cloze", "sense": "think about", "sentence": "After the trip, the teacher asked us to {_} on what we had learned.", "options": ["reflect", "reduce", "ensure", "evaluate"], "answer": 0 },
+        { "id": "reflect-5", "type": "swipe", "sense": "show", "sentence": "The lake {reflected} the mountains like a mirror.", "correct": true, "explain": "Correct. Water and mirrors reflect images: they show them back." },
+        { "id": "reflect-6", "type": "swipe", "sense": "show", "sentence": "I {reflected} my bike to school this morning.", "correct": false, "explain": "Reflect means to show something or think about it. You ride a bike." },
+        { "id": "reflect-7", "type": "chat", "sense": "think about", "who": "Noam", "them": "You've been so quiet since the trip. Everything OK?", "me": "Yeah, I just need some time to {_} on everything that happened.", "answer": "reflect", "alsoFits": ["think"] },
+        { "id": "reflect-8", "type": "chat", "sense": "show", "who": "Rotem", "them": "Why does everyone love this song so much?", "me": "The words really {_} how teenagers feel 💯", "answer": "reflect", "alsoFits": ["show", "describe", "capture", "express"] },
+        { "id": "reflect-9", "type": "family", "sense": "think about", "sentence": "Writing in a diary every night gives you time for {_}.", "answer": "reflection", "hint": "You need a noun after 'time for'. Many nouns end in -ion." },
+        { "id": "reflect-10", "type": "pick", "level": "advanced", "options": [
+          { "text": "Your clothes often {reflect} your personality.", "correct": true },
+          { "text": "She looked at her {reflection} in the shop window.", "correct": true },
+          { "text": "Take a moment to {reflect} before you answer.", "correct": true },
+          { "text": "He {reflected} the ball to his teammate.", "correct": false }
+        ], "explain": "Reflect can mean show (clothes reflect your personality) or think (reflect before you answer), and a reflection is the image in a mirror or window. You pass a ball." }
+      ]
+    },
+    {
+      "word": "significant",
+      "pos": "adjective",
+      "he": "משמעותי, חשוב",
+      "definition": "large or important enough to have an effect or be noticed",
+      "family": [
+        { "form": "significance", "pos": "noun" },
+        { "form": "significantly", "pos": "adverb" }
+      ],
+      "meet": {
+        "sentence": "Moving to a new country was a {significant} change in my life.",
+        "options": ["big and important", "tiny", "boring"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "significant-1", "type": "meaning", "prompt": "large or important enough to have an effect or be noticed", "options": ["significant", "temporary", "accurate", "essential"], "answer": 0 },
+        { "id": "significant-2", "type": "cloze", "sentence": "Winning the national competition was the most {_} moment in the school's history.", "options": ["significant", "accurate", "temporary", "essential"], "answer": 0 },
+        { "id": "significant-3", "type": "swipe", "sentence": "Social media has had a {significant} effect on how teenagers communicate.", "correct": true, "explain": "Correct. A significant effect is a big, important one." },
+        { "id": "significant-4", "type": "swipe", "sentence": "I'm feeling {significant} today, so I'm staying in bed.", "correct": false, "explain": "Significant describes something large or important, not how you feel. You might be feeling sick or tired." },
+        { "id": "significant-5", "type": "chat", "who": "Dor", "them": "Was the price difference between the two phones big?", "me": "Yeah, it was {_}: almost 1,000 shekels!", "answer": "significant", "alsoFits": ["huge", "big", "massive", "large"] },
+        { "id": "significant-6", "type": "chat", "who": "Hadas", "them": "Why is today such a big deal for your grandparents? 🎉", "me": "It's their 50th anniversary! A really {_} day for our family.", "answer": "significant", "alsoFits": ["special", "important", "big"] },
+        { "id": "significant-7", "type": "family", "sentence": "Prices have gone up {_} since last year: almost everything costs more.", "answer": "significantly", "hint": "You need an adverb that describes 'gone up'. Many adverbs end in -ly." },
+        { "id": "significant-8", "type": "cloze", "level": "advanced", "sentence": "Few people understood the {_} of the discovery at the time.", "options": ["significance", "significant", "significantly", "signify"], "answer": 0, "explain": "After 'the' you need a noun: significance = importance." }
+      ]
+    },
+    {
+      "word": "essential",
+      "pos": "adjective",
+      "he": "חיוני, הכרחי",
+      "definition": "completely necessary; you cannot do without it",
+      "family": [{ "form": "essentially", "pos": "adverb" }],
+      "meet": {
+        "sentence": "Water is {essential} for all living things.",
+        "options": ["necessary", "dangerous", "boring"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "essential-1", "type": "meaning", "prompt": "completely necessary; you cannot do without it", "options": ["essential", "temporary", "accurate", "significant"], "answer": 0 },
+        { "id": "essential-2", "type": "cloze", "sentence": "A good pair of shoes is {_} if you're going to hike for six hours.", "options": ["essential", "temporary", "accurate", "significant"], "answer": 0 },
+        { "id": "essential-3", "type": "swipe", "sentence": "Sleep is {essential} for your memory and concentration.", "correct": true, "explain": "Correct. Essential = completely necessary." },
+        { "id": "essential-4", "type": "swipe", "sentence": "The movie was so {essential} that I fell asleep.", "correct": false, "explain": "Essential means necessary. A movie that makes you fall asleep is boring." },
+        { "id": "essential-5", "type": "chat", "who": "Shai", "them": "What should I pack for the trip to the desert? 🏜️", "me": "Water is {_}! Take at least three bottles.", "answer": "essential", "alsoFits": ["important", "necessary", "key", "crucial", "vital"] },
+        { "id": "essential-6", "type": "chat", "who": "Inbar", "them": "Do I really need to go to the review class before the exam?", "me": "Trust me, it's {_}. The teacher explains everything that will be on the test.", "answer": "essential", "alsoFits": ["important", "necessary", "crucial", "vital", "helpful"] },
+        { "id": "essential-7", "type": "family", "sentence": "The two phones are {_} the same: only the color is different.", "answer": "essentially", "hint": "You need an adverb before 'the same'. Many adverbs end in -ly." },
+        { "id": "essential-8", "type": "cloze", "level": "advanced", "sentence": "Before the trip, pack only the {_}: water, a hat and sunscreen.", "options": ["essentials", "essential", "essentially", "essence"], "answer": 0, "explain": "Here you need a plural noun: the essentials = the most necessary things." }
+      ]
+    },
+    {
+      "word": "accurate",
+      "pos": "adjective",
+      "he": "מדויק",
+      "definition": "correct and true in every detail",
+      "family": [
+        { "form": "accuracy", "pos": "noun" },
+        { "form": "accurately", "pos": "adverb" }
+      ],
+      "meet": {
+        "sentence": "The weather app is usually {accurate}: when it says rain, it rains.",
+        "options": ["correct", "funny", "expensive"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "accurate-1", "type": "meaning", "prompt": "correct and true in every detail", "options": ["accurate", "essential", "temporary", "significant"], "answer": 0 },
+        { "id": "accurate-2", "type": "cloze", "sentence": "Make sure your answers are {_}: check every number twice.", "options": ["accurate", "temporary", "significant", "essential"], "answer": 0 },
+        { "id": "accurate-3", "type": "swipe", "sentence": "The witness gave the police an {accurate} description of the thief.", "correct": true, "explain": "Correct. An accurate description is correct in every detail." },
+        { "id": "accurate-4", "type": "swipe", "sentence": "My little brother is very {accurate}: he's always laughing.", "correct": false, "explain": "Accurate means correct in every detail. Someone who's always laughing is cheerful or funny." },
+        { "id": "accurate-5", "type": "chat", "who": "Eden", "them": "Is it true that the trip is on Thursday? Someone said Friday 🤔", "me": "Ask the teacher. What people say in the group chat isn't always {_}.", "answer": "accurate", "alsoFits": ["true", "right", "correct", "reliable"] },
+        { "id": "accurate-6", "type": "chat", "who": "Yarin", "them": "How do you know exactly how many steps you walked today?", "me": "My watch counts them. It's very {_}!", "answer": "accurate", "alsoFits": ["precise", "exact", "good", "smart"] },
+        { "id": "accurate-7", "type": "family", "sentence": "Doctors need to measure your blood pressure {_}.", "answer": "accurately", "hint": "You need an adverb that describes 'measure'. Many adverbs end in -ly." },
+        { "id": "accurate-8", "type": "cloze", "level": "advanced", "sentence": "The new cameras improve the {_} of the speed checks on the highway.", "options": ["accuracy", "accurate", "accurately", "accurateness"], "answer": 0, "explain": "After 'the' you need a noun: accuracy." }
+      ]
+    },
+    {
+      "word": "temporary",
+      "pos": "adjective",
+      "he": "זמני",
+      "definition": "lasting for only a short time; not permanent",
+      "family": [{ "form": "temporarily", "pos": "adverb" }],
+      "meet": {
+        "sentence": "While our school was being fixed, we studied in a {temporary} building.",
+        "options": ["used for a short time", "very old", "huge"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "temporary-1", "type": "meaning", "prompt": "lasting for only a short time; not permanent", "options": ["temporary", "accurate", "essential", "significant"], "answer": 0 },
+        { "id": "temporary-2", "type": "cloze", "sentence": "My cousin got a {_} job at a café, just for the summer holidays.", "options": ["temporary", "accurate", "significant", "essential"], "answer": 0 },
+        { "id": "temporary-3", "type": "swipe", "sentence": "The pain after the injection is only {temporary}.", "correct": true, "explain": "Correct. Temporary = it lasts only a short time." },
+        { "id": "temporary-4", "type": "swipe", "sentence": "We ate a {temporary} pizza with extra cheese.", "correct": false, "explain": "Temporary describes things that last a short time, like a job or a building. For a pizza, you'd say delicious." },
+        { "id": "temporary-5", "type": "chat", "who": "Matan", "them": "Is the road to Eilat closed forever?? 😱", "me": "No, don't worry, it's {_}. They're fixing it until Sunday.", "answer": "temporary" },
+        { "id": "temporary-6", "type": "chat", "who": "Noga", "them": "You changed your hair color?? I love it!", "me": "Thanks! It's only {_}: it washes out after a week 💜", "answer": "temporary" },
+        { "id": "temporary-7", "type": "family", "sentence": "The swimming pool is {_} closed for cleaning.", "answer": "temporarily", "hint": "You need an adverb before 'closed'. Change the -y to -i and add -ly." },
+        { "id": "temporary-8", "type": "pick", "level": "advanced", "options": [
+          { "text": "{Temporary} workers are hired for the busy season.", "correct": true },
+          { "text": "Feeling sad after a breakup is usually {temporary}.", "correct": true },
+          { "text": "The school built a {temporary} classroom in the yard.", "correct": true },
+          { "text": "My dog is very {temporary} and loves to play.", "correct": false }
+        ], "explain": "Temporary is for things that last a short time and then end: a job, a feeling, a building. A dog that loves to play is playful." }
+      ]
+    },
+    {
+      "word": "consequence",
+      "pos": "noun",
+      "he": "תוצאה, השלכה",
+      "definition": "a result of something that happened, often a bad one",
+      "family": [{ "form": "consequently", "pos": "adverb" }],
+      "meet": {
+        "sentence": "If you don't study, you'll have to live with the {consequences}.",
+        "options": ["results", "rules", "teachers"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "consequence-1", "type": "meaning", "prompt": "a result of something that happened, often a bad one", "options": ["consequence", "opportunity", "evidence", "reflection"], "answer": 0 },
+        { "id": "consequence-2", "type": "cloze", "sentence": "One {_} of the storm was that the whole town lost electricity.", "options": ["consequence", "opportunity", "evidence", "reflection"], "answer": 0 },
+        { "id": "consequence-3", "type": "swipe", "sentence": "Missing the bus had a serious {consequence}: I was late for the exam.", "correct": true, "explain": "Correct. A consequence is a result, often a bad one." },
+        { "id": "consequence-4", "type": "swipe", "sentence": "Happy birthday! Here's a small {consequence} for you.", "correct": false, "explain": "A consequence is a result of something. On a birthday, you give someone a present or a gift." },
+        { "id": "consequence-5", "type": "chat", "who": "Amir", "them": "Why do you look so tired? 😴", "me": "I played video games until 2am. Now I'm living with the {_} 😩", "answer": "consequences", "alsoFits": ["results"] },
+        { "id": "consequence-6", "type": "chat", "who": "Talia", "them": "Is it a big deal if I ignore the lab safety rules?", "me": "Yes! It can have serious {_}. Someone got burned last year.", "answer": "consequences", "alsoFits": ["results", "effects", "outcomes", "risks"] },
+        { "id": "consequence-7", "type": "family", "sentence": "He didn't train all winter and, {_}, he lost the race.", "answer": "consequently", "hint": "You need an adverb that means 'as a result'. Many adverbs end in -ly." },
+        { "id": "consequence-8", "type": "cloze", "level": "advanced", "sentence": "Which bus you take is of no {_}: they both stop near the school.", "options": ["consequence", "opportunity", "evidence", "impact"], "answer": 0, "explain": "'Of no consequence' is a formal way to say 'not important'." }
+      ]
+    },
+    {
+      "word": "opportunity",
+      "pos": "noun",
+      "he": "הזדמנות",
+      "definition": "a chance to do something",
+      "family": [],
+      "meet": {
+        "sentence": "The exchange program gave me the {opportunity} to live in London for a month.",
+        "options": ["chance", "problem", "ticket"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "opportunity-1", "type": "meaning", "prompt": "a chance to do something", "options": ["opportunity", "consequence", "evidence", "impact"], "answer": 0 },
+        { "id": "opportunity-2", "type": "cloze", "sentence": "Don't miss this {_} to meet the famous author: she visits only once a year.", "options": ["opportunity", "consequence", "evidence", "impact"], "answer": 0 },
+        { "id": "opportunity-3", "type": "swipe", "sentence": "The summer job was a great {opportunity} to save money.", "correct": true, "explain": "Correct. An opportunity is a chance to do something." },
+        { "id": "opportunity-4", "type": "swipe", "sentence": "I fell off my bike and got a big {opportunity} on my knee.", "correct": false, "explain": "An opportunity is a chance. On your knee, you'd get a bruise or a cut." },
+        { "id": "opportunity-5", "type": "chat", "who": "Bar", "them": "They're looking for volunteers at the animal shelter 🐾", "me": "Really? That's a great {_} to help and get experience!", "answer": "opportunity", "alsoFits": ["chance", "way", "idea"] },
+        { "id": "opportunity-6", "type": "chat", "who": "Nir", "them": "Should I try out for the national team? I'm scared 😬", "me": "Go for it! You might not get another {_} like this.", "answer": "opportunity", "alsoFits": ["chance", "shot"] },
+        { "id": "opportunity-7", "type": "cloze", "level": "advanced", "sentence": "Equal {_} for men and women at work are still not guaranteed in many countries.", "options": ["opportunities", "consequences", "evidence", "impacts"], "answer": 0, "explain": "'Equal opportunities' means everyone gets the same chances." }
+      ]
+    },
+    {
+      "word": "evidence",
+      "pos": "noun",
+      "he": "ראיה, הוכחה",
+      "definition": "facts or signs that show that something is true",
+      "family": [{ "form": "evident", "pos": "adjective" }],
+      "meet": {
+        "sentence": "The police found {evidence} that the thief came in through the window.",
+        "options": ["proof", "money", "a door"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "evidence-1", "type": "meaning", "prompt": "facts or signs that show that something is true", "options": ["evidence", "opportunity", "consequence", "impact"], "answer": 0 },
+        { "id": "evidence-2", "type": "cloze", "sentence": "There is no scientific {_} that eating carrots helps you see in the dark.", "options": ["evidence", "opportunity", "consequence", "impact"], "answer": 0 },
+        { "id": "evidence-3", "type": "swipe", "sentence": "The muddy shoes by the door were {evidence} that someone had been outside.", "correct": true, "explain": "Correct. Evidence is something that shows that something is true." },
+        { "id": "evidence-4", "type": "swipe", "sentence": "I'd like an {evidence} with cheese and tomato, please.", "correct": false, "explain": "Evidence is proof that something is true. In a café you'd order a sandwich or a toast." },
+        { "id": "evidence-5", "type": "chat", "who": "Ofek", "them": "Did Dana really eat the whole cake? 🎂", "me": "She says no, but there's chocolate all over her face. That's pretty clear {_}! 😂", "answer": "evidence", "alsoFits": ["proof"] },
+        { "id": "evidence-6", "type": "chat", "who": "Keren", "them": "My brother says he did his homework, but I don't believe him.", "me": "Ask him for {_}. Tell him to show you his notebook!", "answer": "evidence", "alsoFits": ["proof"] },
+        { "id": "evidence-7", "type": "family", "sentence": "It was {_} from her smile that she had passed the test.", "answer": "evident", "hint": "You need an adjective after 'It was'. Take off the -ce and add -t." },
+        { "id": "evidence-8", "type": "cloze", "level": "advanced", "sentence": "The lawyer showed the court three new pieces of {_}.", "options": ["evidence", "evidences", "opportunity", "consequences"], "answer": 0, "explain": "Evidence is uncountable: say 'pieces of evidence', never 'evidences'." }
+      ]
+    },
+    {
+      "word": "impact",
+      "pos": "noun",
+      "he": "השפעה (חזקה)",
+      "definition": "a strong effect that something has on someone or something",
+      "family": [],
+      "meet": {
+        "sentence": "The new phone ban had a big {impact} on how students spend their breaks.",
+        "options": ["effect", "price", "rule"],
+        "answer": 0
+      },
+      "questions": [
+        { "id": "impact-1", "type": "meaning", "prompt": "a strong effect that something has on someone or something", "options": ["impact", "evidence", "opportunity", "reflection"], "answer": 0 },
+        { "id": "impact-2", "type": "cloze", "sentence": "Your teachers can have a huge {_} on the way you see the world.", "options": ["impact", "evidence", "opportunity", "reflection"], "answer": 0 },
+        { "id": "impact-3", "type": "swipe", "sentence": "Climate change has a serious {impact} on farmers in hot countries.", "correct": true, "explain": "Correct. Something has an impact on someone or something." },
+        { "id": "impact-4", "type": "swipe", "sentence": "Can you pass me the {impact}? I want to cut the bread.", "correct": false, "explain": "An impact is a strong effect. To cut bread, you need a knife." },
+        { "id": "impact-5", "type": "chat", "who": "Yuval", "them": "Did that video about plastic really change how you shop? 🤔", "me": "Totally! It had a big {_} on me. I don't buy bottled water anymore.", "answer": "impact", "alsoFits": ["effect", "influence"] },
+        { "id": "impact-6", "type": "chat", "who": "Maya", "them": "Why did you choose to become a nurse?", "me": "My aunt is a nurse. She had a huge {_} on my decision ❤️", "answer": "impact", "alsoFits": ["influence", "effect", "role", "part"] },
+        { "id": "impact-7", "type": "cloze", "level": "advanced", "sentence": "Rising prices will {_} families with small children the most.", "options": ["impact", "reflect", "reduce", "ensure"], "answer": 0, "explain": "Impact can also be a verb: to impact something = to have a strong effect on it." }
+      ]
+    }
+  ]
+}
