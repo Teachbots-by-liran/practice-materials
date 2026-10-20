@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { GuessMonitor } from "@/lib/vocab/guessing";
 import { placementItems } from "@/lib/vocab/scheduler";
 import type { ClozeQuestion, MeaningQuestion, WordList } from "@/lib/vocab/types";
@@ -12,10 +12,12 @@ import { useLockAndTimer, useShuffled } from "./useOptions";
  * they get harder questions. There's an "I don't know" button so nobody has to guess.
  */
 export function Placement({ list, onDone }: { list: WordList; onDone: (known: string[]) => void }) {
-  const items = useMemo(() => {
+  // Picked once. The app re-renders when progress syncs in the background, and the
+  // questions must not reshuffle under the student's finger when that happens.
+  const [items] = useState(() => {
     const qs = new Map(list.words.flatMap((w) => w.questions.map((q) => [q.id, q] as const)));
     return placementItems(list, Math.random).map((i) => ({ ...i, q: qs.get(i.qid) as ClozeQuestion | MeaningQuestion }));
-  }, [list]);
+  });
   const [phase, setPhase] = useState<"intro" | "check" | "done">("intro");
   const [k, setK] = useState(0);
   const known = useRef<string[]>([]);
