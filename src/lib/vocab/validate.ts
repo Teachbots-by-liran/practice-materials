@@ -25,7 +25,9 @@ export function formsOf(entry: WordEntry): string[] {
   for (const b of bases) {
     const stem = b.replace(/e$/, "");
     const yStem = b.replace(/y$/, "i");
-    [b, `${b}s`, `${b}es`, `${b}d`, `${b}ed`, `${stem}ed`, `${stem}ing`, `${b}ing`, `${yStem}es`, `${yStem}ed`].forEach((f) =>
+    // Doubled final consonant: admit → admitted, stop → stopping.
+    const doubled = /[^aeiou][aeiou][bdgklmnprt]$/.test(b) ? b + b.slice(-1) : null;
+    [b, `${b}s`, `${b}es`, `${b}d`, `${b}ed`, `${stem}ed`, `${stem}ing`, `${b}ing`, `${yStem}es`, `${yStem}ed`, ...(doubled ? [`${doubled}ed`, `${doubled}ing`] : [])].forEach((f) =>
       out.add(f.toLowerCase()),
     );
   }

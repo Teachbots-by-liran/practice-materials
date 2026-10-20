@@ -1,0 +1,2160 @@
+{
+  "id": "band2-core1-part1",
+  "title": "Band II · Core I · Part 1",
+  "words": [
+    {
+      "word": "accident",
+      "pos": "noun",
+      "he": "תאונה; משהו שקרה בטעות",
+      "definition": "something bad that happens by chance, often causing damage or injury",
+      "family": [
+        {
+          "form": "accidentally",
+          "pos": "adverb"
+        }
+      ],
+      "meet": {
+        "sentence": "There was a car {accident} near the school, but luckily nobody was hurt.",
+        "options": [
+          "a crash",
+          "a party",
+          "a test"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "accident-1",
+          "type": "meaning",
+          "prompt": "something bad that happens by chance, often causing damage or injury",
+          "options": [
+            "accident",
+            "adventure",
+            "apology",
+            "amount"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "accident-2",
+          "type": "cloze",
+          "sentence": "I didn't mean to break your phone. It was an {_}!",
+          "options": [
+            "accident",
+            "advantage",
+            "adventure",
+            "amount"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "accident-3",
+          "type": "swipe",
+          "sentence": "He had a bike {accident} and broke his arm.",
+          "correct": true,
+          "explain": "Correct. An accident is something bad that happens by chance."
+        },
+        {
+          "id": "accident-4",
+          "type": "swipe",
+          "sentence": "We had a great {accident} at the beach and swam all day.",
+          "correct": false,
+          "explain": "An accident is something bad that happens by chance. A great time at the beach is a fun day."
+        },
+        {
+          "id": "accident-5",
+          "type": "chat",
+          "who": "Shir",
+          "them": "Why is your arm in a cast?? 😮",
+          "me": "I had a small {_} at basketball practice. I'll be fine!",
+          "answer": "accident",
+          "alsoFits": [
+            "injury",
+            "fall"
+          ]
+        },
+        {
+          "id": "accident-6",
+          "type": "chat",
+          "who": "Eli",
+          "them": "Did you spill juice on my notebook on purpose?!",
+          "me": "No! It was an {_}, I'm so sorry 😬",
+          "answer": "accident",
+          "alsoFits": [
+            "mistake"
+          ]
+        },
+        {
+          "id": "accident-7",
+          "type": "family",
+          "sentence": "I {_} deleted all my photos. Can I get them back?",
+          "answer": "accidentally",
+          "hint": "You need an adverb that means 'by mistake'. Many adverbs end in -ly."
+        },
+        {
+          "id": "accident-8",
+          "type": "cloze",
+          "level": "advanced",
+          "sentence": "I met my best friend by {_}: we sat next to each other on a bus.",
+          "options": [
+            "accident",
+            "advantage",
+            "adventure",
+            "danger"
+          ],
+          "answer": 0,
+          "explain": "'By accident' means by chance, without planning it."
+        }
+      ]
+    },
+    {
+      "word": "admire",
+      "pos": "verb",
+      "he": "להעריץ, להעריך מאוד",
+      "definition": "to like and respect someone or something very much",
+      "family": [
+        {
+          "form": "admiration",
+          "pos": "noun"
+        }
+      ],
+      "confusables": [
+        "admit"
+      ],
+      "meet": {
+        "sentence": "I really {admire} my grandmother: she raised five children and still found time to volunteer.",
+        "options": [
+          "respect and like",
+          "feel sorry for",
+          "don't know"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "admire-1",
+          "type": "meaning",
+          "prompt": "to like and respect someone or something very much",
+          "options": [
+            "admire",
+            "admit",
+            "compare",
+            "convince"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "admire-2",
+          "type": "cloze",
+          "sentence": "Many young players {_} Messi for his skill and hard work.",
+          "options": [
+            "admire",
+            "admit",
+            "destroy",
+            "compare"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "admire-3",
+          "type": "swipe",
+          "sentence": "We stopped to {admire} the view from the top of the mountain.",
+          "correct": true,
+          "explain": "Correct. You can admire a person, or something beautiful like a view."
+        },
+        {
+          "id": "admire-4",
+          "type": "swipe",
+          "sentence": "I {admired} the bus because I was late.",
+          "correct": false,
+          "explain": "Admire means to like and respect. When you're late, you run to catch the bus."
+        },
+        {
+          "id": "admire-5",
+          "type": "chat",
+          "who": "Yonatan",
+          "them": "Who's your role model?",
+          "me": "My mom. I really {_} how hard she works ❤️",
+          "answer": "admire",
+          "alsoFits": [
+            "respect",
+            "love",
+            "appreciate"
+          ]
+        },
+        {
+          "id": "admire-6",
+          "type": "chat",
+          "who": "Hila",
+          "them": "Did you see Noa's drawing? It's incredible 🎨",
+          "me": "Yes! I {_} people who can draw like that.",
+          "answer": "admire",
+          "alsoFits": [
+            "love",
+            "respect",
+            "envy"
+          ]
+        },
+        {
+          "id": "admire-7",
+          "type": "family",
+          "sentence": "The firefighters' bravery filled everyone with {_}.",
+          "answer": "admiration",
+          "hint": "You need a noun. Many nouns end in -ation."
+        },
+        {
+          "id": "admire-8",
+          "type": "pick",
+          "level": "advanced",
+          "options": [
+            {
+              "text": "I {admire} her for being so honest.",
+              "correct": true
+            },
+            {
+              "text": "Tourists stood and {admired} the old city walls.",
+              "correct": true
+            },
+            {
+              "text": "He {admired} that he had taken the money.",
+              "correct": false
+            },
+            {
+              "text": "She {admires} the floor every morning with a mop.",
+              "correct": false
+            }
+          ],
+          "explain": "You admire a person or something beautiful. To say you did something wrong, you admit it. And you clean a floor."
+        }
+      ]
+    },
+    {
+      "word": "admit",
+      "pos": "verb",
+      "he": "להודות (במשהו)",
+      "definition": "to agree that something is true, often something bad that you did",
+      "family": [],
+      "confusables": [
+        "admire"
+      ],
+      "meet": {
+        "sentence": "Finally, Tom {admitted} that he had eaten the last piece of cake.",
+        "options": [
+          "said it was true",
+          "said no",
+          "forgot"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "admit-1",
+          "type": "meaning",
+          "prompt": "to agree that something is true, often something bad that you did",
+          "options": [
+            "admit",
+            "admire",
+            "convince",
+            "discover"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "admit-2",
+          "type": "cloze",
+          "sentence": "After the police showed him the video, the man {_} that he stole the bike.",
+          "options": [
+            "admitted",
+            "admired",
+            "compared",
+            "destroyed"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "admit-3",
+          "type": "swipe",
+          "sentence": "I have to {admit} that your idea is better than mine.",
+          "correct": true,
+          "explain": "Correct. Admit = agree that something is true, even if you don't want to."
+        },
+        {
+          "id": "admit-4",
+          "type": "swipe",
+          "sentence": "Can you {admit} the door? It's cold in here.",
+          "correct": false,
+          "explain": "Admit means to agree that something is true. For a door, you close it."
+        },
+        {
+          "id": "admit-5",
+          "type": "chat",
+          "who": "Gal",
+          "them": "Wait, did you cheat in the game last night? 😂",
+          "me": "OK, OK, I {_} it! I looked at your cards 🙈",
+          "answer": "admit",
+          "alsoFits": [
+            "confess"
+          ]
+        },
+        {
+          "id": "admit-6",
+          "type": "chat",
+          "who": "Roni",
+          "them": "Why are you so quiet? Is something wrong?",
+          "me": "I have to {_} something... I lost the book you lent me 😔",
+          "answer": "admit",
+          "alsoFits": [
+            "confess",
+            "tell",
+            "say"
+          ]
+        },
+        {
+          "id": "admit-7",
+          "type": "cloze",
+          "level": "advanced",
+          "sentence": "Only people with a ticket will be {_} into the concert hall.",
+          "options": [
+            "admitted",
+            "admired",
+            "compared",
+            "convinced"
+          ],
+          "answer": 0,
+          "explain": "Admit can also mean 'let someone enter': to be admitted into a place."
+        }
+      ]
+    },
+    {
+      "word": "advantage",
+      "pos": "noun",
+      "he": "יתרון",
+      "definition": "something that helps you or makes you better than others",
+      "family": [
+        {
+          "form": "disadvantage",
+          "pos": "noun"
+        }
+      ],
+      "meet": {
+        "sentence": "One {advantage} of living in a big city is that there's always something to do.",
+        "options": [
+          "good thing",
+          "problem",
+          "price"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "advantage-1",
+          "type": "meaning",
+          "prompt": "something that helps you or makes you better than others",
+          "options": [
+            "advantage",
+            "adventure",
+            "accident",
+            "amount"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "advantage-2",
+          "type": "cloze",
+          "sentence": "Being tall is a big {_} in basketball.",
+          "options": [
+            "advantage",
+            "accident",
+            "apology",
+            "amount"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "advantage-3",
+          "type": "swipe",
+          "sentence": "Speaking two languages is a real {advantage} when you look for a job.",
+          "correct": true,
+          "explain": "Correct. An advantage is something that helps you."
+        },
+        {
+          "id": "advantage-4",
+          "type": "swipe",
+          "sentence": "I'm hungry. Can I have an {advantage} with cheese?",
+          "correct": false,
+          "explain": "An advantage is something that helps you. With cheese, you'd ask for a sandwich or a toast."
+        },
+        {
+          "id": "advantage-5",
+          "type": "chat",
+          "who": "Liron",
+          "them": "Why did you pick the school next to your house?",
+          "me": "The big {_} is that I can sleep until 7:45 😴",
+          "answer": "advantage",
+          "alsoFits": [
+            "benefit",
+            "plus",
+            "reason"
+          ]
+        },
+        {
+          "id": "advantage-6",
+          "type": "chat",
+          "who": "Avi",
+          "them": "Is it better to buy the phone online or at the store?",
+          "me": "Online has one {_}: it's 200 shekels cheaper.",
+          "answer": "advantage",
+          "alsoFits": [
+            "benefit",
+            "plus"
+          ]
+        },
+        {
+          "id": "advantage-7",
+          "type": "family",
+          "sentence": "The only {_} of the trip is that we have to wake up at 5am.",
+          "answer": "disadvantage",
+          "hint": "You need the opposite of advantage. Add a beginning that means 'not'."
+        },
+        {
+          "id": "advantage-8",
+          "type": "cloze",
+          "level": "advanced",
+          "sentence": "Smart students take {_} of the free lessons after school.",
+          "options": [
+            "advantage",
+            "adventure",
+            "amount",
+            "accident"
+          ],
+          "answer": 0,
+          "explain": "'Take advantage of something' means use a chance well."
+        }
+      ]
+    },
+    {
+      "word": "adventure",
+      "pos": "noun",
+      "he": "הרפתקה",
+      "definition": "an exciting experience, sometimes a little dangerous",
+      "family": [
+        {
+          "form": "adventurous",
+          "pos": "adjective"
+        }
+      ],
+      "meet": {
+        "sentence": "Camping alone in the desert for three days was a real {adventure}.",
+        "options": [
+          "exciting experience",
+          "boring lesson",
+          "small meal"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "adventure-1",
+          "type": "meaning",
+          "prompt": "an exciting experience, sometimes a little dangerous",
+          "options": [
+            "adventure",
+            "advantage",
+            "accident",
+            "apology"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "adventure-2",
+          "type": "cloze",
+          "sentence": "The movie is about a boy's exciting {_} on a pirate ship.",
+          "options": [
+            "adventures",
+            "accidents",
+            "apologies",
+            "amounts"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "adventure-3",
+          "type": "swipe",
+          "sentence": "Our trip to the Galilee was a great {adventure}: we hiked, kayaked and slept in tents.",
+          "correct": true,
+          "explain": "Correct. An adventure is an exciting experience."
+        },
+        {
+          "id": "adventure-4",
+          "type": "swipe",
+          "sentence": "I need to buy an {adventure} for my mom's birthday.",
+          "correct": false,
+          "explain": "An adventure is an exciting experience. For a birthday, you buy a present."
+        },
+        {
+          "id": "adventure-5",
+          "type": "chat",
+          "who": "Tal",
+          "them": "How was the trip to Eilat?? 🌊",
+          "me": "Amazing! We went diving with dolphins. What an {_}!",
+          "answer": "adventure",
+          "alsoFits": [
+            "experience",
+            "trip"
+          ]
+        },
+        {
+          "id": "adventure-6",
+          "type": "chat",
+          "who": "Maor",
+          "them": "Do you want to try the new escape room with us on Friday?",
+          "me": "Yes! I'm always up for a new {_} 😎",
+          "answer": "adventure",
+          "alsoFits": [
+            "challenge",
+            "experience"
+          ]
+        },
+        {
+          "id": "adventure-7",
+          "type": "family",
+          "sentence": "My brother is very {_}: he wants to climb Mount Everest one day.",
+          "answer": "adventurous",
+          "hint": "You need an adjective that describes a person. This one ends in -ous."
+        },
+        {
+          "id": "adventure-8",
+          "type": "pick",
+          "level": "advanced",
+          "options": [
+            {
+              "text": "We had a real {adventure} in the jungle.",
+              "correct": true
+            },
+            {
+              "text": "For me, every good book is an {adventure}.",
+              "correct": true
+            },
+            {
+              "text": "The test was full of {adventures}: I got three questions wrong.",
+              "correct": false
+            },
+            {
+              "text": "She's an {adventurous} cook who always tries new recipes.",
+              "correct": true
+            }
+          ],
+          "explain": "An adventure is exciting (even in your imagination, like a book), and an adventurous person likes trying new things. Wrong answers on a test are mistakes, not adventures."
+        }
+      ]
+    },
+    {
+      "word": "afraid",
+      "pos": "adjective",
+      "he": "מפחד, חושש",
+      "definition": "feeling fear or worry about something",
+      "family": [],
+      "meet": {
+        "sentence": "My little sister is {afraid} of the dark, so she sleeps with the light on.",
+        "options": [
+          "scared",
+          "happy",
+          "tired"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "afraid-1",
+          "type": "meaning",
+          "prompt": "feeling fear or worry about something",
+          "options": [
+            "afraid",
+            "amazing",
+            "available",
+            "dangerous"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "afraid-2",
+          "type": "cloze",
+          "sentence": "Don't be {_}. The dog is friendly and won't bite you.",
+          "options": [
+            "afraid",
+            "amazing",
+            "available",
+            "dangerous"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "afraid-3",
+          "type": "swipe",
+          "sentence": "Many people are {afraid} of speaking in front of a big group.",
+          "correct": true,
+          "explain": "Correct. You are afraid of something."
+        },
+        {
+          "id": "afraid-4",
+          "type": "swipe",
+          "sentence": "This pizza is so {afraid}, I want another slice!",
+          "correct": false,
+          "explain": "Afraid describes feeling fear. A pizza you love is tasty or delicious."
+        },
+        {
+          "id": "afraid-5",
+          "type": "chat",
+          "who": "Bar",
+          "them": "Why didn't you go on the big roller coaster? 🎢",
+          "me": "Honestly? I was {_}! It's so high 😱",
+          "answer": "afraid",
+          "alsoFits": [
+            "scared",
+            "terrified",
+            "nervous"
+          ]
+        },
+        {
+          "id": "afraid-6",
+          "type": "chat",
+          "who": "Ido",
+          "them": "Are you coming to the beach tonight?",
+          "me": "Maybe... I'm a bit {_} of swimming in the dark.",
+          "answer": "afraid",
+          "alsoFits": [
+            "scared",
+            "nervous"
+          ]
+        },
+        {
+          "id": "afraid-7",
+          "type": "cloze",
+          "level": "advanced",
+          "sentence": "I'm {_} we've sold all the tickets. Sorry!",
+          "options": [
+            "afraid",
+            "amazing",
+            "available",
+            "dangerous"
+          ],
+          "answer": 0,
+          "explain": "'I'm afraid…' is a polite way to give bad news."
+        }
+      ]
+    },
+    {
+      "word": "aim",
+      "pos": "noun",
+      "he": "מטרה; לכוון, לשאוף",
+      "definition": "something you want to achieve; a goal",
+      "family": [],
+      "meet": {
+        "sentence": "The {aim} of the game is to score more points than the other team.",
+        "options": [
+          "goal",
+          "rule",
+          "price"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "aim-1",
+          "type": "meaning",
+          "prompt": "something you want to achieve; a goal",
+          "options": [
+            "aim",
+            "amount",
+            "advantage",
+            "apology"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "aim-2",
+          "type": "cloze",
+          "sentence": "Our main {_} this year is to pass the English exam with a high grade.",
+          "options": [
+            "aim",
+            "amount",
+            "accident",
+            "apology"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "aim-3",
+          "type": "swipe",
+          "sentence": "The {aim} of the project is to clean up the beach.",
+          "correct": true,
+          "explain": "Correct. An aim is something you want to achieve."
+        },
+        {
+          "id": "aim-4",
+          "type": "swipe",
+          "sentence": "I fell on the stairs and hurt my {aim}.",
+          "correct": false,
+          "explain": "An aim is a goal. On the stairs, you could hurt your arm or your knee."
+        },
+        {
+          "id": "aim-5",
+          "type": "chat",
+          "who": "Dana",
+          "them": "Why are you running every day? 🏃‍♀️",
+          "me": "My {_} is to finish the Tel Aviv marathon in February!",
+          "answer": "aim",
+          "alsoFits": [
+            "goal",
+            "plan",
+            "dream"
+          ]
+        },
+        {
+          "id": "aim-6",
+          "type": "chat",
+          "who": "Nadav",
+          "them": "What's the point of this assignment?",
+          "me": "The teacher said the {_} is to practise writing emails.",
+          "answer": "aim",
+          "alsoFits": [
+            "goal",
+            "point",
+            "idea",
+            "purpose"
+          ]
+        },
+        {
+          "id": "aim-7",
+          "type": "cloze",
+          "level": "advanced",
+          "sentence": "The new app is {_} at teenagers who want to learn to cook.",
+          "options": [
+            "aimed",
+            "admired",
+            "compared",
+            "convinced"
+          ],
+          "answer": 0,
+          "explain": "'Aimed at' a group means made for that group."
+        }
+      ]
+    },
+    {
+      "word": "amazing",
+      "pos": "adjective",
+      "he": "מדהים",
+      "definition": "very surprising and very good",
+      "family": [
+        {
+          "form": "amazed",
+          "pos": "adjective"
+        }
+      ],
+      "meet": {
+        "sentence": "The view from the top of the Azrieli Tower is {amazing}!",
+        "options": [
+          "really great",
+          "boring",
+          "dangerous"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "amazing-1",
+          "type": "meaning",
+          "prompt": "very surprising and very good",
+          "options": [
+            "amazing",
+            "afraid",
+            "available",
+            "dangerous"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "amazing-2",
+          "type": "cloze",
+          "sentence": "The singer has an {_} voice. Everyone stopped talking when she sang.",
+          "options": [
+            "amazing",
+            "afraid",
+            "available",
+            "dangerous"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "amazing-3",
+          "type": "swipe",
+          "sentence": "We had an {amazing} time at the concert last night.",
+          "correct": true,
+          "explain": "Correct. Amazing = really great, surprising in a good way."
+        },
+        {
+          "id": "amazing-4",
+          "type": "swipe",
+          "sentence": "I was so {amazing} before the test that I couldn't sleep.",
+          "correct": false,
+          "explain": "Amazing describes something great. Before a test, you might feel nervous or worried."
+        },
+        {
+          "id": "amazing-5",
+          "type": "chat",
+          "who": "Lior",
+          "them": "So? How was the new Pixar movie? 🍿",
+          "me": "Totally {_}! I cried and laughed at the same time.",
+          "answer": "amazing",
+          "alsoFits": [
+            "awesome",
+            "great",
+            "incredible",
+            "fantastic",
+            "wonderful"
+          ]
+        },
+        {
+          "id": "amazing-6",
+          "type": "chat",
+          "who": "Ofir",
+          "them": "Did you try the new falafel place? 🧆",
+          "me": "Yes, it's {_}. Best falafel in the city!",
+          "answer": "amazing",
+          "alsoFits": [
+            "great",
+            "awesome",
+            "incredible",
+            "excellent",
+            "delicious"
+          ]
+        },
+        {
+          "id": "amazing-7",
+          "type": "family",
+          "sentence": "We were {_} when our teacher arrived at school on a horse.",
+          "answer": "amazed",
+          "hint": "You need an adjective for how people felt. Feelings often end in -ed."
+        },
+        {
+          "id": "amazing-8",
+          "type": "pick",
+          "level": "advanced",
+          "options": [
+            {
+              "text": "It always {amazes} me how fast you learned to swim.",
+              "correct": true
+            },
+            {
+              "text": "I'm {amazed} by her talent.",
+              "correct": true
+            },
+            {
+              "text": "The movie was {amazed}.",
+              "correct": false
+            },
+            {
+              "text": "What an {amazing} idea!",
+              "correct": true
+            }
+          ],
+          "explain": "Things are amazing; people feel amazed. 'The movie was amazed' should be 'The movie was amazing'."
+        }
+      ]
+    },
+    {
+      "word": "amount",
+      "pos": "noun",
+      "he": "כמות",
+      "definition": "how much there is of something",
+      "family": [],
+      "confusables": [
+        "number"
+      ],
+      "meet": {
+        "sentence": "Elephants eat a huge {amount} of food every day.",
+        "options": [
+          "quantity",
+          "color",
+          "kind"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "amount-1",
+          "type": "meaning",
+          "prompt": "how much there is of something",
+          "options": [
+            "amount",
+            "aim",
+            "advantage",
+            "accident"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "amount-2",
+          "type": "cloze",
+          "sentence": "You only need a small {_} of salt for this recipe.",
+          "options": [
+            "amount",
+            "advantage",
+            "aim",
+            "accident"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "amount-3",
+          "type": "swipe",
+          "sentence": "The {amount} of homework this week is crazy!",
+          "correct": true,
+          "explain": "Correct. Use amount with things you can't count, like homework, water or money."
+        },
+        {
+          "id": "amount-4",
+          "type": "swipe",
+          "sentence": "Let's meet at the {amount} near the bus stop.",
+          "correct": false,
+          "explain": "Amount means how much there is of something. You meet at a place, like a café."
+        },
+        {
+          "id": "amount-5",
+          "type": "chat",
+          "who": "Neta",
+          "them": "How much did you spend on the trip? 💸",
+          "me": "A crazy {_} of money. I'm broke now 😅",
+          "answer": "amount",
+          "alsoFits": [
+            "sum"
+          ]
+        },
+        {
+          "id": "amount-6",
+          "type": "chat",
+          "who": "Gil",
+          "them": "Why are you drinking so much water? 💧",
+          "me": "The coach said we need a large {_} of water when it's this hot.",
+          "answer": "amount",
+          "alsoFits": [
+            "bottle",
+            "glass"
+          ]
+        },
+        {
+          "id": "amount-7",
+          "type": "cloze",
+          "level": "advanced",
+          "sentence": "A large {_} of students came to the meeting.",
+          "options": [
+            "number",
+            "amount",
+            "aim",
+            "advantage"
+          ],
+          "answer": 0,
+          "explain": "Students can be counted, so use 'number'. Use 'amount' for things you can't count, like water or time."
+        }
+      ]
+    },
+    {
+      "word": "apology",
+      "pos": "noun",
+      "he": "התנצלות",
+      "definition": "words that say you are sorry",
+      "family": [
+        {
+          "form": "apologize",
+          "pos": "verb"
+        }
+      ],
+      "meet": {
+        "sentence": "Shir sent me a long {apology} after she forgot my birthday.",
+        "options": [
+          "message saying sorry",
+          "birthday present",
+          "joke"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "apology-1",
+          "type": "meaning",
+          "prompt": "words that say you are sorry",
+          "options": [
+            "apology",
+            "accident",
+            "advantage",
+            "adventure"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "apology-2",
+          "type": "cloze",
+          "sentence": "The bus company posted an {_} for the delays this morning.",
+          "options": [
+            "apology",
+            "advantage",
+            "adventure",
+            "amount"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "apology-3",
+          "type": "swipe",
+          "sentence": "I think you owe your sister an {apology}.",
+          "correct": true,
+          "explain": "Correct. You owe someone an apology when you should say sorry."
+        },
+        {
+          "id": "apology-4",
+          "type": "swipe",
+          "sentence": "We ate a delicious chocolate {apology} for dessert.",
+          "correct": false,
+          "explain": "An apology is saying sorry. For dessert, you might eat a chocolate cake."
+        },
+        {
+          "id": "apology-5",
+          "type": "chat",
+          "who": "Noa",
+          "them": "Are you still angry at Yoav? 😕",
+          "me": "Not really. He sent me an {_} and we're OK now.",
+          "answer": "apology",
+          "alsoFits": [
+            "message",
+            "sorry"
+          ]
+        },
+        {
+          "id": "apology-6",
+          "type": "chat",
+          "who": "Ben",
+          "them": "The teacher was really upset that we were late.",
+          "me": "Yeah, we should write her an {_} together.",
+          "answer": "apology",
+          "alsoFits": [
+            "email",
+            "note",
+            "letter",
+            "message"
+          ]
+        },
+        {
+          "id": "apology-7",
+          "type": "family",
+          "sentence": "I want to {_} for what I said yesterday. I was wrong.",
+          "answer": "apologize",
+          "hint": "You need a verb that means 'say sorry'. It ends in -ize (or -ise)."
+        },
+        {
+          "id": "apology-8",
+          "type": "cloze",
+          "level": "advanced",
+          "sentence": "Please accept our {_} for any problems this may cause.",
+          "options": [
+            "apologies",
+            "advantages",
+            "adventures",
+            "amounts"
+          ],
+          "answer": 0,
+          "explain": "'Please accept our apologies' is a formal way to say sorry, often in emails or announcements."
+        }
+      ]
+    },
+    {
+      "word": "available",
+      "pos": "adjective",
+      "he": "זמין, פנוי",
+      "definition": "free to use, buy, or talk to",
+      "family": [],
+      "meet": {
+        "sentence": "Sorry, there are no seats {available} on Friday's flight.",
+        "options": [
+          "free to use or buy",
+          "broken",
+          "expensive"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "available-1",
+          "type": "meaning",
+          "prompt": "free to use, buy, or talk to",
+          "options": [
+            "available",
+            "afraid",
+            "amazing",
+            "dangerous"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "available-2",
+          "type": "cloze",
+          "sentence": "Is the doctor {_} today, or is she on vacation?",
+          "options": [
+            "available",
+            "afraid",
+            "amazing",
+            "dangerous"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "available-3",
+          "type": "swipe",
+          "sentence": "The new album is {available} on Spotify from today.",
+          "correct": true,
+          "explain": "Correct. Available = you can get it or use it."
+        },
+        {
+          "id": "available-4",
+          "type": "swipe",
+          "sentence": "My grandfather is very {available}: he's 95 years old.",
+          "correct": false,
+          "explain": "Available means free to use or talk to. For someone who's 95, you'd say old."
+        },
+        {
+          "id": "available-5",
+          "type": "chat",
+          "who": "Adi",
+          "them": "Can you help me with math homework this afternoon? 🙏",
+          "me": "Sure, I'm {_} after 4!",
+          "answer": "available",
+          "alsoFits": [
+            "free",
+            "around",
+            "home"
+          ]
+        },
+        {
+          "id": "available-6",
+          "type": "chat",
+          "who": "Omri",
+          "them": "Do they have the shoes in size 43?",
+          "me": "I checked online. Only size 42 is {_} 😕",
+          "answer": "available",
+          "alsoFits": [
+            "left"
+          ]
+        },
+        {
+          "id": "available-7",
+          "type": "cloze",
+          "level": "advanced",
+          "sentence": "The free tickets are {_} only to students with a school ID.",
+          "options": [
+            "available",
+            "afraid",
+            "amazing",
+            "dangerous"
+          ],
+          "answer": 0,
+          "explain": "'Available to' someone means they can get it."
+        }
+      ]
+    },
+    {
+      "word": "behave",
+      "pos": "verb",
+      "he": "להתנהג",
+      "definition": "to act in a certain way, especially in a good or polite way",
+      "family": [
+        {
+          "form": "behavior",
+          "pos": "noun"
+        }
+      ],
+      "meet": {
+        "sentence": "The children {behaved} very well during the long flight.",
+        "options": [
+          "acted",
+          "cried",
+          "slept"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "behave-1",
+          "type": "meaning",
+          "prompt": "to act in a certain way, especially in a good or polite way",
+          "options": [
+            "behave",
+            "compare",
+            "compete",
+            "convince"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "behave-2",
+          "type": "cloze",
+          "sentence": "If you don't {_} in class, the teacher will call your parents.",
+          "options": [
+            "behave",
+            "compare",
+            "compete",
+            "destroy"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "behave-3",
+          "type": "swipe",
+          "sentence": "Our dog {behaves} badly when we leave him alone.",
+          "correct": true,
+          "explain": "Correct. You can behave well or badly."
+        },
+        {
+          "id": "behave-4",
+          "type": "swipe",
+          "sentence": "Can you {behave} me the salt, please?",
+          "correct": false,
+          "explain": "Behave means to act in a certain way. At the table, you ask someone to pass the salt."
+        },
+        {
+          "id": "behave-5",
+          "type": "chat",
+          "who": "Yael",
+          "them": "Your little brother is coming to the party?? 😬",
+          "me": "Don't worry, I told him to {_} himself!",
+          "answer": "behave"
+        },
+        {
+          "id": "behave-6",
+          "type": "chat",
+          "who": "Eran",
+          "them": "Why did the teacher send Tomer out?",
+          "me": "He didn't {_} during the test. He kept talking 🙄",
+          "answer": "behave",
+          "alsoFits": [
+            "listen",
+            "stop"
+          ]
+        },
+        {
+          "id": "behave-7",
+          "type": "family",
+          "sentence": "The school has strict rules about students' {_} on trips.",
+          "answer": "behavior",
+          "hint": "You need a noun after students'. Behave → behav- + -ior (British: -iour)."
+        },
+        {
+          "id": "behave-8",
+          "type": "pick",
+          "level": "advanced",
+          "options": [
+            {
+              "text": "{Behave} yourself at Grandma's house!",
+              "correct": true
+            },
+            {
+              "text": "This car {behaves} well on wet roads.",
+              "correct": true
+            },
+            {
+              "text": "She {behaved} the dishes after dinner.",
+              "correct": false
+            },
+            {
+              "text": "Scientists study how bees {behave}.",
+              "correct": true
+            }
+          ],
+          "explain": "Behave describes how people, animals and even machines act. After dinner, you wash the dishes."
+        }
+      ]
+    },
+    {
+      "word": "compare",
+      "pos": "verb",
+      "he": "להשוות",
+      "definition": "to look at how two or more things are the same or different",
+      "family": [
+        {
+          "form": "comparison",
+          "pos": "noun"
+        }
+      ],
+      "meet": {
+        "sentence": "Before buying a phone, I always {compare} prices on different websites.",
+        "options": [
+          "look at them side by side",
+          "forget them",
+          "pay them"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "compare-1",
+          "type": "meaning",
+          "prompt": "to look at how two or more things are the same or different",
+          "options": [
+            "compare",
+            "compete",
+            "convince",
+            "discover"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "compare-2",
+          "type": "cloze",
+          "sentence": "In your essay, {_} life in the city with life in a village.",
+          "options": [
+            "compare",
+            "compete",
+            "convince",
+            "destroy"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "compare-3",
+          "type": "swipe",
+          "sentence": "Don't {compare} yourself to others. Everyone learns at their own speed.",
+          "correct": true,
+          "explain": "Correct. Compare = look at what's the same and what's different."
+        },
+        {
+          "id": "compare-4",
+          "type": "swipe",
+          "sentence": "I {compared} a glass of water because I was thirsty.",
+          "correct": false,
+          "explain": "Compare means to look at differences. When you're thirsty, you drink a glass of water."
+        },
+        {
+          "id": "compare-5",
+          "type": "chat",
+          "who": "Rotem",
+          "them": "Which laptop should I buy? 🤔",
+          "me": "Let's {_} them. Send me both links!",
+          "answer": "compare",
+          "alsoFits": [
+            "check",
+            "see"
+          ]
+        },
+        {
+          "id": "compare-6",
+          "type": "chat",
+          "who": "Shai",
+          "them": "My mom always says my sister is better at math 😒",
+          "me": "That's annoying. Parents shouldn't {_} their kids.",
+          "answer": "compare",
+          "alsoFits": [
+            "judge"
+          ]
+        },
+        {
+          "id": "compare-7",
+          "type": "family",
+          "sentence": "There's no {_} between homemade pizza and frozen pizza!",
+          "answer": "comparison",
+          "hint": "You need a noun. Compare → compar- + -ison."
+        },
+        {
+          "id": "compare-8",
+          "type": "cloze",
+          "level": "advanced",
+          "sentence": "{_} to last year, this summer was much hotter.",
+          "options": [
+            "Compared",
+            "Competed",
+            "Convinced",
+            "Discovered"
+          ],
+          "answer": 0,
+          "explain": "'Compared to…' shows a difference between two things."
+        }
+      ]
+    },
+    {
+      "word": "compete",
+      "pos": "verb",
+      "he": "להתחרות",
+      "definition": "to try to win against other people",
+      "family": [
+        {
+          "form": "competition",
+          "pos": "noun"
+        },
+        {
+          "form": "competitive",
+          "pos": "adjective"
+        }
+      ],
+      "meet": {
+        "sentence": "Twenty schools will {compete} in the national robotics contest.",
+        "options": [
+          "try to win",
+          "watch",
+          "pay"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "compete-1",
+          "type": "meaning",
+          "prompt": "to try to win against other people",
+          "options": [
+            "compete",
+            "compare",
+            "convince",
+            "behave"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "compete-2",
+          "type": "cloze",
+          "sentence": "Our team will {_} against the best team in the country on Sunday.",
+          "options": [
+            "compete",
+            "destroy",
+            "convince",
+            "behave"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "compete-3",
+          "type": "swipe",
+          "sentence": "Thousands of runners {competed} in the Jerusalem Marathon.",
+          "correct": true,
+          "explain": "Correct. You compete in a race or a competition."
+        },
+        {
+          "id": "compete-4",
+          "type": "swipe",
+          "sentence": "I {competed} my homework at midnight.",
+          "correct": false,
+          "explain": "Compete means to try to win. For homework, you'd say you finished it."
+        },
+        {
+          "id": "compete-5",
+          "type": "chat",
+          "who": "Itay",
+          "them": "Are you going to the chess tournament? ♟️",
+          "me": "Yes! I'm going to {_} for the first time 😬",
+          "answer": "compete",
+          "alsoFits": [
+            "play",
+            "participate"
+          ]
+        },
+        {
+          "id": "compete-6",
+          "type": "chat",
+          "who": "Yuval",
+          "them": "Why are you training so hard?",
+          "me": "I want to {_} in the national swimming championship!",
+          "answer": "compete",
+          "alsoFits": [
+            "swim",
+            "participate"
+          ]
+        },
+        {
+          "id": "compete-7",
+          "type": "family",
+          "sentence": "Our class won first prize in the photo {_}!",
+          "answer": "competition",
+          "hint": "You need a noun. Many nouns end in -tion."
+        },
+        {
+          "id": "compete-8",
+          "type": "cloze",
+          "level": "advanced",
+          "sentence": "My brother is very {_}: he hates losing, even at board games.",
+          "options": [
+            "competitive",
+            "competition",
+            "compete",
+            "competitor"
+          ],
+          "answer": 0,
+          "explain": "You need an adjective that describes a person: competitive."
+        }
+      ]
+    },
+    {
+      "word": "convince",
+      "pos": "verb",
+      "he": "לשכנע",
+      "definition": "to make someone believe something or agree to do something",
+      "family": [
+        {
+          "form": "convinced",
+          "pos": "adjective"
+        }
+      ],
+      "meet": {
+        "sentence": "I finally {convinced} my parents to let me go to the concert.",
+        "options": [
+          "got them to agree",
+          "forgot",
+          "paid"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "convince-1",
+          "type": "meaning",
+          "prompt": "to make someone believe something or agree to do something",
+          "options": [
+            "convince",
+            "compare",
+            "compete",
+            "discover"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "convince-2",
+          "type": "cloze",
+          "sentence": "Can you help me {_} my dad to buy a dog?",
+          "options": [
+            "convince",
+            "compare",
+            "destroy",
+            "discover"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "convince-3",
+          "type": "swipe",
+          "sentence": "Her speech {convinced} everyone to vote for her.",
+          "correct": true,
+          "explain": "Correct. You convince someone to do something."
+        },
+        {
+          "id": "convince-4",
+          "type": "swipe",
+          "sentence": "We {convinced} a cake for Dad's birthday.",
+          "correct": false,
+          "explain": "Convince means to make someone agree. For a birthday, you bake a cake."
+        },
+        {
+          "id": "convince-5",
+          "type": "chat",
+          "who": "Hadas",
+          "them": "Is your mom letting you come to Eilat with us? 🏖️",
+          "me": "Not yet... I'm trying to {_} her! 🙏",
+          "answer": "convince",
+          "alsoFits": [
+            "persuade",
+            "ask"
+          ]
+        },
+        {
+          "id": "convince-6",
+          "type": "chat",
+          "who": "Amit",
+          "them": "Why did you join the drama club? You hate acting 😂",
+          "me": "Shira {_} me. She said it would be fun!",
+          "answer": "convinced",
+          "alsoFits": [
+            "persuaded",
+            "made",
+            "asked",
+            "told"
+          ]
+        },
+        {
+          "id": "convince-7",
+          "type": "family",
+          "sentence": "I'm {_} that we'll win the game tomorrow.",
+          "answer": "convinced",
+          "hint": "You need an adjective that means 'very sure'. It looks like a past form."
+        },
+        {
+          "id": "convince-8",
+          "type": "pick",
+          "level": "advanced",
+          "options": [
+            {
+              "text": "It's hard to {convince} teenagers to sleep early.",
+              "correct": true
+            },
+            {
+              "text": "She wasn't {convinced} by his story.",
+              "correct": true
+            },
+            {
+              "text": "He {convinced} the ball into the goal.",
+              "correct": false
+            },
+            {
+              "text": "They tried to {convince} me, but I still said no.",
+              "correct": true
+            }
+          ],
+          "explain": "You convince people (to do something, or that something is true), and you can be convinced or not. You kick a ball into a goal."
+        }
+      ]
+    },
+    {
+      "word": "danger",
+      "pos": "noun",
+      "he": "סכנה",
+      "definition": "the chance that something bad or harmful will happen",
+      "family": [
+        {
+          "form": "dangerous",
+          "pos": "adjective"
+        }
+      ],
+      "meet": {
+        "sentence": "The sign said: \"{Danger}! Deep water. No swimming.\"",
+        "options": [
+          "a warning about something bad",
+          "welcome",
+          "a sale"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "danger-1",
+          "type": "meaning",
+          "prompt": "the chance that something bad or harmful will happen",
+          "options": [
+            "danger",
+            "difficulty",
+            "advantage",
+            "amount"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "danger-2",
+          "type": "cloze",
+          "sentence": "The doctors said the patient is out of {_} and will go home soon.",
+          "options": [
+            "danger",
+            "difficulty",
+            "advantage",
+            "amount"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "danger-3",
+          "type": "swipe",
+          "sentence": "Climbing without a rope can put your life in {danger}.",
+          "correct": true,
+          "explain": "Correct. Your life can be in danger."
+        },
+        {
+          "id": "danger-4",
+          "type": "swipe",
+          "sentence": "I love the {danger} in this soup. It's so spicy!",
+          "correct": false,
+          "explain": "Danger is the chance of something bad. For soup, you'd talk about the taste."
+        },
+        {
+          "id": "danger-5",
+          "type": "chat",
+          "who": "Moran",
+          "them": "Is it OK to swim at that beach? There's no lifeguard 🌊",
+          "me": "No way! The waves are a real {_} there.",
+          "answer": "danger",
+          "alsoFits": [
+            "problem",
+            "risk"
+          ]
+        },
+        {
+          "id": "danger-6",
+          "type": "chat",
+          "who": "Elad",
+          "them": "Why did they close the old bridge?",
+          "me": "It's falling apart. It's a {_} to everyone who walks on it.",
+          "answer": "danger",
+          "alsoFits": [
+            "risk",
+            "threat"
+          ]
+        },
+        {
+          "id": "danger-7",
+          "type": "family",
+          "sentence": "Texting while driving is really {_}.",
+          "answer": "dangerous",
+          "hint": "You need an adjective after 'really'. Add -ous."
+        },
+        {
+          "id": "danger-8",
+          "type": "cloze",
+          "level": "advanced",
+          "sentence": "Some animals, like the white rhino, are in {_} of disappearing forever.",
+          "options": [
+            "danger",
+            "difficulty",
+            "advantage",
+            "adventure"
+          ],
+          "answer": 0,
+          "explain": "'In danger of' + -ing means something bad might happen."
+        }
+      ]
+    },
+    {
+      "word": "destroy",
+      "pos": "verb",
+      "he": "להרוס",
+      "definition": "to damage something so badly that it can't be used or fixed",
+      "family": [
+        {
+          "form": "destruction",
+          "pos": "noun"
+        }
+      ],
+      "meet": {
+        "sentence": "The fire {destroyed} three houses, but everyone got out safely.",
+        "options": [
+          "damaged completely",
+          "built",
+          "cleaned"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "destroy-1",
+          "type": "meaning",
+          "prompt": "to damage something so badly that it can't be used or fixed",
+          "options": [
+            "destroy",
+            "discover",
+            "disappear",
+            "compare"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "destroy-2",
+          "type": "cloze",
+          "sentence": "The storm {_} the farmers' fields, so there were no vegetables that summer.",
+          "options": [
+            "destroyed",
+            "discovered",
+            "compared",
+            "convinced"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "destroy-3",
+          "type": "swipe",
+          "sentence": "Plastic in the sea can {destroy} the homes of many fish.",
+          "correct": true,
+          "explain": "Correct. Destroy = damage so badly it can't be used anymore."
+        },
+        {
+          "id": "destroy-4",
+          "type": "swipe",
+          "sentence": "I {destroyed} my friend at the bus stop and said hi.",
+          "correct": false,
+          "explain": "Destroy means to damage something completely. At the bus stop, you met your friend."
+        },
+        {
+          "id": "destroy-5",
+          "type": "chat",
+          "who": "Inbal",
+          "them": "What happened to your phone?! 📱",
+          "me": "My little brother dropped it in the pool. It's totally {_} 😭",
+          "answer": "destroyed",
+          "alsoFits": [
+            "ruined",
+            "broken",
+            "dead",
+            "finished"
+          ]
+        },
+        {
+          "id": "destroy-6",
+          "type": "chat",
+          "who": "Ron",
+          "them": "Did you see the sand castle we built? 🏰",
+          "me": "Yes, but the waves are going to {_} it soon 😅",
+          "answer": "destroy",
+          "alsoFits": [
+            "ruin",
+            "break"
+          ]
+        },
+        {
+          "id": "destroy-7",
+          "type": "family",
+          "sentence": "The earthquake caused terrible {_} in the city.",
+          "answer": "destruction",
+          "hint": "You need a noun. Destroy → destruct- + -ion."
+        },
+        {
+          "id": "destroy-8",
+          "type": "pick",
+          "level": "advanced",
+          "options": [
+            {
+              "text": "The injury {destroyed} his hopes of playing in the final.",
+              "correct": true
+            },
+            {
+              "text": "Hackers {destroyed} the school's website.",
+              "correct": true
+            },
+            {
+              "text": "She {destroyed} a new language in one year.",
+              "correct": false
+            },
+            {
+              "text": "Too much sugar can {destroy} your teeth.",
+              "correct": true
+            }
+          ],
+          "explain": "You can destroy things, and even hopes or plans. A new language is something you learn."
+        }
+      ]
+    },
+    {
+      "word": "difficulty",
+      "pos": "noun",
+      "he": "קושי",
+      "definition": "a problem; something that is hard to do or understand",
+      "family": [
+        {
+          "form": "difficult",
+          "pos": "adjective"
+        }
+      ],
+      "meet": {
+        "sentence": "I had some {difficulty} finding the classroom on my first day.",
+        "options": [
+          "a problem",
+          "fun",
+          "luck"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "difficulty-1",
+          "type": "meaning",
+          "prompt": "a problem; something that is hard to do or understand",
+          "options": [
+            "difficulty",
+            "danger",
+            "advantage",
+            "accident"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "difficulty-2",
+          "type": "cloze",
+          "sentence": "My grandmother has {_} walking, so she uses a stick.",
+          "options": [
+            "difficulty",
+            "danger",
+            "advantage",
+            "accident"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "difficulty-3",
+          "type": "swipe",
+          "sentence": "Many students have {difficulty} with English spelling.",
+          "correct": true,
+          "explain": "Correct. You have difficulty with something, or difficulty doing something."
+        },
+        {
+          "id": "difficulty-4",
+          "type": "swipe",
+          "sentence": "I put the {difficulty} in the fridge so it stays cold.",
+          "correct": false,
+          "explain": "A difficulty is a problem. In the fridge, you put food or drinks."
+        },
+        {
+          "id": "difficulty-5",
+          "type": "chat",
+          "who": "Yarden",
+          "them": "Did you finish the physics homework? 🤯",
+          "me": "Almost. I had some {_} with the last question.",
+          "answer": "difficulty",
+          "alsoFits": [
+            "trouble",
+            "problems",
+            "problem"
+          ]
+        },
+        {
+          "id": "difficulty-6",
+          "type": "chat",
+          "who": "Lihi",
+          "them": "How's your new school?",
+          "me": "Good! I had {_} making friends at first, but now it's fine 😊",
+          "answer": "difficulty",
+          "alsoFits": [
+            "trouble",
+            "problems"
+          ]
+        },
+        {
+          "id": "difficulty-7",
+          "type": "family",
+          "sentence": "The test was so {_} that half the class failed.",
+          "answer": "difficult",
+          "hint": "You need an adjective. Take off the -y."
+        },
+        {
+          "id": "difficulty-8",
+          "type": "cloze",
+          "level": "advanced",
+          "sentence": "We had a few {_} on the trip, but we got home safely.",
+          "options": [
+            "difficulties",
+            "dangers",
+            "advantages",
+            "amounts"
+          ],
+          "answer": 0,
+          "explain": "Here difficulties means problems. It's countable: one difficulty, two difficulties."
+        }
+      ]
+    },
+    {
+      "word": "disappear",
+      "pos": "verb",
+      "he": "להיעלם",
+      "definition": "to go somewhere where you can't be seen or found",
+      "family": [
+        {
+          "form": "disappearance",
+          "pos": "noun"
+        }
+      ],
+      "meet": {
+        "sentence": "The cat {disappeared} for two days, and then came home hungry.",
+        "options": [
+          "couldn't be found",
+          "got sick",
+          "slept"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "disappear-1",
+          "type": "meaning",
+          "prompt": "to go somewhere where you can't be seen or found",
+          "options": [
+            "disappear",
+            "discover",
+            "destroy",
+            "compete"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "disappear-2",
+          "type": "cloze",
+          "sentence": "The sun {_} behind the clouds, and it started to rain.",
+          "options": [
+            "disappeared",
+            "discovered",
+            "destroyed",
+            "compared"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "disappear-3",
+          "type": "swipe",
+          "sentence": "My keys always {disappear} when I'm in a hurry!",
+          "correct": true,
+          "explain": "Correct. Things disappear when you can't find them."
+        },
+        {
+          "id": "disappear-4",
+          "type": "swipe",
+          "sentence": "Let's {disappear} a movie tonight.",
+          "correct": false,
+          "explain": "Disappear means to go out of sight. With a movie, you watch it."
+        },
+        {
+          "id": "disappear-5",
+          "type": "chat",
+          "who": "Ella",
+          "them": "Where are the cookies I baked? 🍪",
+          "me": "Ha! They {_} in ten minutes. Everyone loved them!",
+          "answer": "disappeared",
+          "alsoFits": [
+            "vanished",
+            "finished"
+          ]
+        },
+        {
+          "id": "disappear-6",
+          "type": "chat",
+          "who": "Noam",
+          "them": "Is your bike still outside your building?",
+          "me": "No! It {_} last night. I think someone stole it 😡",
+          "answer": "disappeared",
+          "alsoFits": [
+            "vanished"
+          ]
+        },
+        {
+          "id": "disappear-7",
+          "type": "family",
+          "sentence": "The police are investigating the {_} of a famous painting from the museum.",
+          "answer": "disappearance",
+          "hint": "You need a noun after 'the'. Add -ance."
+        },
+        {
+          "id": "disappear-8",
+          "type": "cloze",
+          "level": "advanced",
+          "sentence": "Many old traditions are slowly {_} because young people don't follow them anymore.",
+          "options": [
+            "disappearing",
+            "discovering",
+            "destroying",
+            "comparing"
+          ],
+          "answer": 0,
+          "explain": "Things can slowly disappear, meaning stop existing: disappearing."
+        }
+      ]
+    },
+    {
+      "word": "discover",
+      "pos": "verb",
+      "he": "לגלות",
+      "definition": "to find something, or learn something, for the first time",
+      "family": [
+        {
+          "form": "discovery",
+          "pos": "noun"
+        }
+      ],
+      "meet": {
+        "sentence": "Scientists {discovered} a new kind of fish near Eilat.",
+        "options": [
+          "found for the first time",
+          "ate",
+          "sold"
+        ],
+        "answer": 0
+      },
+      "questions": [
+        {
+          "id": "discover-1",
+          "type": "meaning",
+          "prompt": "to find something, or learn something, for the first time",
+          "options": [
+            "discover",
+            "disappear",
+            "destroy",
+            "convince"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "discover-2",
+          "type": "cloze",
+          "sentence": "When I opened the box, I {_} that it was empty.",
+          "options": [
+            "discovered",
+            "destroyed",
+            "disappeared",
+            "competed"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "discover-3",
+          "type": "swipe",
+          "sentence": "On the trip, we {discovered} a small waterfall hidden behind the trees.",
+          "correct": true,
+          "explain": "Correct. You discover something you didn't know was there."
+        },
+        {
+          "id": "discover-4",
+          "type": "swipe",
+          "sentence": "I {discovered} my teeth before bed.",
+          "correct": false,
+          "explain": "Discover means to find something new. Before bed, you brush your teeth."
+        },
+        {
+          "id": "discover-5",
+          "type": "chat",
+          "who": "Tamar",
+          "them": "How did you find this amazing café? ☕",
+          "me": "I {_} it by accident when I got lost in Jaffa!",
+          "answer": "discovered",
+          "alsoFits": [
+            "found"
+          ]
+        },
+        {
+          "id": "discover-6",
+          "type": "chat",
+          "who": "Uri",
+          "them": "Why do you love that band so much? 🎸",
+          "me": "I {_} their music last summer, and now I listen every day.",
+          "answer": "discovered",
+          "alsoFits": [
+            "found",
+            "heard"
+          ]
+        },
+        {
+          "id": "discover-7",
+          "type": "family",
+          "sentence": "The {_} of penicillin saved millions of lives.",
+          "answer": "discovery",
+          "hint": "You need a noun. Discover → discover + -y."
+        },
+        {
+          "id": "discover-8",
+          "type": "pick",
+          "level": "advanced",
+          "options": [
+            {
+              "text": "Scientists {discovered} water on Mars.",
+              "correct": true
+            },
+            {
+              "text": "I {discovered} that I'm good at drawing.",
+              "correct": true
+            },
+            {
+              "text": "She {discovered} the window to let in some air.",
+              "correct": false
+            },
+            {
+              "text": "Kids love to {discover} new places.",
+              "correct": true
+            }
+          ],
+          "explain": "You discover places, facts and even things about yourself. To let in air, you open the window."
+        }
+      ]
+    }
+  ]
+}
