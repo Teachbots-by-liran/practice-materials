@@ -40,8 +40,9 @@ phones; progress syncs once it's back. (New students can't join until then.)
 ## Running a class
 
 1. **Classes → New class** gives you a code like `XMT-3392`.
-2. Students open `/word-quest` on their phones, tap **Join my class**, and enter the code,
+2. Send students the **class link** from the class page (or show its QR code). They type
    a name and a 4-digit PIN. The same name and PIN bring their progress back on any phone.
+   (Without the link: `/word-quest` → **Join my class** → class code, name, PIN.)
    Forgotten PIN: reset it on the student's page.
 3. On the class page, **Assign a word list**: the main list, a different list for a group
    (*Replace*), or extra ⭐ words for some students (*Add-on*). A **challenge list** unlocks

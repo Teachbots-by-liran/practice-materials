@@ -103,7 +103,7 @@ export default async function ClassPage({ params, searchParams }: { params: Prom
       <section className="section-card !p-0 overflow-hidden">
         <h2 className="section-title !mb-0 px-6 pt-5">Students</h2>
         {students.length === 0 ? (
-          <p className="px-6 py-5 text-sm text-gray-500">No students yet. Share the class code above.</p>
+          <p className="px-6 py-5 text-sm text-gray-500">No students yet. Share the class link above.</p>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
