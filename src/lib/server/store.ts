@@ -119,7 +119,8 @@ let cached: Store | null | undefined;
 /** The configured store, or null when class features aren't set up (production without Supabase). */
 export function getStore(): Store | null {
   if (cached !== undefined) return cached;
-  const url = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL;
+  // Supabase sometimes shows the URL with /rest/v1/ at the end; the client wants the base URL.
+  const url = (process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL)?.trim().replace(/\/rest\/v1\/?$/, "").replace(/\/$/, "");
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (url && key) {
     cached = supabaseStore(createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } }));
