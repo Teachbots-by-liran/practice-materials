@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const r = await joinClass(store, { code: body.code ?? "", nickname: body.nickname ?? "", pin: body.pin ?? "" });
-    return NextResponse.json({ token: r.token, nickname: r.student.nickname, className: r.classRoom.name, created: r.created });
+    return NextResponse.json({ token: r.token, nickname: r.student.nickname, className: r.classRoom.name, classCode: r.classRoom.joinCode, created: r.created });
   } catch (err) {
     if (err instanceof JoinError) {
       const status = err.code === "locked" ? 429 : err.code === "no-class" ? 404 : err.code === "wrong-pin" ? 401 : 400;

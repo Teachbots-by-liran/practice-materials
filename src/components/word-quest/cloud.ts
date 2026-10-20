@@ -11,6 +11,8 @@ export interface CloudSession {
   token: string;
   nickname: string;
   className: string;
+  /** Missing on sessions from before class links existed. */
+  classCode?: string;
 }
 
 function read<T>(key: string): T | null {
@@ -54,10 +56,30 @@ export async function joinClass(code: string, nickname: string, pin: string): Pr
     });
     const body = await r.json();
     if (!r.ok) return { ok: false, error: body.error ?? "Couldn't join. Try again." };
-    return { ok: true, session: { token: body.token, nickname: body.nickname, className: body.className } };
+    return { ok: true, session: { token: body.token, nickname: body.nickname, className: body.className, classCode: body.classCode } };
   } catch {
     return { ok: false, error: "No connection. Check your internet and try again." };
   }
+}
+
+export type ClassInfo = { ok: true; code: string; name: string } | { ok: false; offline: boolean };
+
+/** Looks up the class behind a join link. */
+export async function classInfo(code: string): Promise<ClassInfo> {
+  try {
+    const r = await fetch(`/api/wq/class?code=${encodeURIComponent(code)}`, { cache: "no-store" });
+    if (!r.ok) return { ok: false, offline: r.status >= 500 };
+    const body = await r.json();
+    return { ok: true, code: body.code, name: body.name };
+  } catch {
+    return { ok: false, offline: true };
+  }
+}
+
+/** Whether this phone is already signed in to the class behind a link. */
+export function sameClass(s: CloudSession | null, info: { code: string; name: string }): boolean {
+  if (!s) return false;
+  return s.classCode ? s.classCode === info.code : s.className === info.name;
 }
 
 export type MeResult =

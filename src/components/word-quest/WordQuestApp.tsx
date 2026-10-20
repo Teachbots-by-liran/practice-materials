@@ -11,6 +11,8 @@ import { localConfig, needsPlacement, studyLists, withConfig } from "@/lib/vocab
 import type { StudentProgress } from "@/lib/vocab/types";
 import {
   classesAvailable,
+  classInfo,
+  sameClass,
   fetchMe,
   loadCachedConfig,
   loadSession,
@@ -29,8 +31,11 @@ type View = "loading" | "welcome" | "join" | "placement" | "home" | "session" | 
 
 const SYNC_DELAY_MS = 4000;
 
-export function WordQuestApp() {
+export function WordQuestApp({ joinCode }: { joinCode?: string } = {}) {
   const [view, setView] = useState<View>("loading");
+  /** The class behind the link the student opened, if any. */
+  const [invite, setInvite] = useState<{ code: string; name: string } | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
   const [progress, setProgress] = useState<StudentProgress | null>(null);
   const [session, setSession] = useState<CloudSession | null>(null);
   const [config, setConfig] = useState<StudyConfig | null>(null);
@@ -111,9 +116,27 @@ export function WordQuestApp() {
         saveProgress(p);
         if (loadSession()) sync();
       }
+
+      // Opened from a class link: already in that class → practise; otherwise → join it.
+      if (joinCode) {
+        const info = await classInfo(joinCode);
+        if (info.ok && sameClass(loadSession(), info)) {
+          window.history.replaceState(null, "", "/word-quest");
+        } else if (info.ok) {
+          setInvite({ code: info.code, name: info.name });
+          setView("join");
+          return;
+        } else {
+          setNotice(
+            info.offline
+              ? "No connection right now. Check your internet and open the class link again."
+              : "This class link doesn't work anymore. Ask your teacher for the new one.",
+          );
+        }
+      }
       setView(p ? "home" : "welcome");
     })();
-  }, [connect, sync]);
+  }, [connect, sync, joinCode]);
 
   // Phones keep tabs open for days: pick up the new date and fresh class setup on return,
   // and save progress when the student switches away.
@@ -151,13 +174,29 @@ export function WordQuestApp() {
   if (view === "join") {
     return (
       <JoinForm
-        onCancel={() => setView(progress ? "home" : "welcome")}
+        invite={invite}
+        signedInAs={session && invite && !sameClass(session, invite) ? session : null}
+        onCancel={() => {
+          setInvite(null);
+          window.history.replaceState(null, "", "/word-quest");
+          setView(progress ? "home" : "welcome");
+        }}
         onJoined={async (s) => {
+          // Switching from another class on this phone: that progress belongs to the other account.
+          const previous = loadSession();
+          if (previous && previous.token !== s.token && !sameClass(previous, { code: s.classCode ?? "", name: s.className })) {
+            clearProgress();
+            saveCachedConfig(null);
+            setConfig(null);
+            progressRef.current = null;
+          }
           saveSession(s);
           setSession(s);
           const p = await connect(s, progressRef.current);
           if (p) update(p);
           sync();
+          setInvite(null);
+          window.history.replaceState(null, "", "/word-quest");
           setView("home");
         }}
       />
@@ -168,6 +207,7 @@ export function WordQuestApp() {
     return (
       <Welcome
         canJoin={canJoin}
+        notice={notice}
         onJoin={() => setView("join")}
         onSolo={(name) => {
           update(emptyProgress(name, DEFAULT_LIST_ID));

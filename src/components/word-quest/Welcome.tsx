@@ -3,13 +3,28 @@
 import { useState } from "react";
 import { joinClass, type CloudSession } from "./cloud";
 
-export function Welcome({ canJoin, onJoin, onSolo }: { canJoin: boolean; onJoin: () => void; onSolo: (name: string) => void }) {
+export function Welcome({
+  canJoin,
+  notice,
+  onJoin,
+  onSolo,
+}: {
+  canJoin: boolean;
+  notice?: string | null;
+  onJoin: () => void;
+  onSolo: (name: string) => void;
+}) {
   const [solo, setSolo] = useState(!canJoin);
   const [name, setName] = useState("");
 
   return (
     <div className="wq-app">
       <main className="wq-stage" style={{ justifyContent: "center" }}>
+        {notice && (
+          <div className="wq-note-box" role="alert">
+            {notice}
+          </div>
+        )}
         <div className="wq-logo" style={{ fontSize: 34 }}>
           Word<span>Quest</span>
         </div>
@@ -62,8 +77,20 @@ export function Welcome({ canJoin, onJoin, onSolo }: { canJoin: boolean; onJoin:
   );
 }
 
-export function JoinForm({ onJoined, onCancel }: { onJoined: (s: CloudSession) => void; onCancel: () => void }) {
-  const [code, setCode] = useState("");
+export function JoinForm({
+  invite,
+  signedInAs,
+  onJoined,
+  onCancel,
+}: {
+  /** Opened from a class link: the code is filled in and hidden. */
+  invite?: { code: string; name: string } | null;
+  /** Someone else's class is signed in on this phone. */
+  signedInAs?: CloudSession | null;
+  onJoined: (s: CloudSession) => void;
+  onCancel: () => void;
+}) {
+  const [code, setCode] = useState(invite?.code ?? "");
   const [nickname, setNickname] = useState("");
   const [pin, setPin] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -83,23 +110,40 @@ export function JoinForm({ onJoined, onCancel }: { onJoined: (s: CloudSession) =
   return (
     <div className="wq-app">
       <main className="wq-stage">
-        <div className="wq-eyebrow">Join your class</div>
-        <h1 className="wq-prompt">Your teacher will give you a class code</h1>
-        <label className="wq-label" htmlFor="wq-code">
-          Class code
-        </label>
-        <input
-          id="wq-code"
-          className="wq-answer"
-          value={code}
-          onChange={(e) => setCode(e.target.value.toUpperCase())}
-          placeholder="ABC-1234"
-          autoCapitalize="characters"
-          autoComplete="off"
-          autoCorrect="off"
-          spellCheck={false}
-          maxLength={10}
-        />
+        {invite ? (
+          <>
+            <div className="wq-logo">
+              Word<span>Quest</span>
+            </div>
+            <div className="wq-eyebrow">Join your class</div>
+            <h1 className="wq-prompt">{invite.name}</h1>
+            {signedInAs && (
+              <div className="wq-note-box">
+                This phone is signed in as {signedInAs.nickname} in {signedInAs.className}. Joining here switches to {invite.name}.
+              </div>
+            )}
+          </>
+        ) : (
+          <>
+            <div className="wq-eyebrow">Join your class</div>
+            <h1 className="wq-prompt">Your teacher will give you a class code</h1>
+            <label className="wq-label" htmlFor="wq-code">
+              Class code
+            </label>
+            <input
+              id="wq-code"
+              className="wq-answer"
+              value={code}
+              onChange={(e) => setCode(e.target.value.toUpperCase())}
+              placeholder="ABC-1234"
+              autoCapitalize="characters"
+              autoComplete="off"
+              autoCorrect="off"
+              spellCheck={false}
+              maxLength={10}
+            />
+          </>
+        )}
         <label className="wq-label" htmlFor="wq-nick">
           Your name in this class
         </label>
@@ -140,7 +184,7 @@ export function JoinForm({ onJoined, onCancel }: { onJoined: (s: CloudSession) =
           {busy ? "Joining…" : "Join"}
         </button>
         <button className="wq-btn wq-btn-link" onClick={onCancel}>
-          Back
+          {invite ? "Not now" : "Back"}
         </button>
       </footer>
     </div>

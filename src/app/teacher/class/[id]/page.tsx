@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { headers } from "next/headers";
 import { notFound } from "next/navigation";
+import QRCode from "qrcode";
 import { AVAILABLE_LISTS, classOverview } from "@/lib/server/repo";
 import { getStore } from "@/lib/server/store";
 import type { Assignment, Group } from "@/lib/vocab/classroom";
@@ -14,6 +16,7 @@ import {
   setFocusAction,
 } from "../../actions";
 import { AssignForm } from "./AssignForm";
+import { ClassLink } from "./ClassLink";
 
 export const dynamic = "force-dynamic";
 
@@ -49,6 +52,13 @@ export default async function ClassPage({ params, searchParams }: { params: Prom
   const attention = students.filter((s) => s.needsAttention.length);
   const focusOn = classRoom.focusUntil && today <= classRoom.focusUntil ? classRoom.focusWords : [];
 
+  // The class's own join link, on whatever address the portal is open at.
+  const h = await headers();
+  const host = h.get("x-forwarded-host") ?? h.get("host") ?? "practice-materials.vercel.app";
+  const proto = h.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
+  const joinUrl = `${proto}://${host}/word-quest/join/${classRoom.joinCode}`;
+  const qrSvg = await QRCode.toString(joinUrl, { type: "svg", margin: 1, color: { dark: "#1e1b4b", light: "#ffffff" } });
+
   return (
     <div className="space-y-8">
       {/* Header */}
@@ -61,11 +71,7 @@ export default async function ClassPage({ params, searchParams }: { params: Prom
             {classRoom.name} {classRoom.archived && <span className="text-sm font-medium text-gray-500">(archived)</span>}
           </h1>
         </div>
-        <div className="section-card !p-4 text-right">
-          <div className="text-xs font-semibold uppercase tracking-wide text-gray-500">Class code</div>
-          <div className="font-mono text-3xl font-bold text-indigo-700 tracking-wider">{classRoom.joinCode}</div>
-          <div className="text-xs text-gray-500">Students open /word-quest and tap “Join my class”</div>
-        </div>
+        <ClassLink url={joinUrl} code={classRoom.joinCode} qrSvg={qrSvg} />
       </div>
 
       {/* Numbers */}
